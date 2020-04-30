@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Arvo";
+  src: url("../fonts/Arvo-Regular.ttf");
+}
+
 html {
   background-color: lavenderblush;
+  font-family: "Arvo"
 }
