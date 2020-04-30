@@ -1,0 +1,10 @@
+{
+  "name": "react-code-template",
+  "version": "1.0.0",
+  "description": "Base code strcuture for React front-end project.",
+  "main": "index.js",
+  "author": "Vu Thai Duy <vuthaiduy1990@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+  }
+}
