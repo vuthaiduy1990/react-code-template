@@ -2,7 +2,7 @@
 import assert from 'assert';
 import { noop } from './common';
 
-let a;
+const a = 1;
 describe(`UT-${a}. Common Utilities`, () => {
   const b = 1;
 
@@ -19,7 +19,7 @@ describe(`UT-${a}. Common Utilities`, () => {
     // call noop with parameter
     c += 1;
     it(`UT-${a}.${b}.${c}. test noop function with parameter`, done => {
-      assert.equal('', noop('xxxx'));
+      assert.equal('', noop('xxx'));
       done();
     });
   });

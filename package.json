@@ -51,6 +51,7 @@
     "gatsby-plugin-eslint": "^2.0.8",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.4.0",
+    "jest-html-reporters": "^1.2.1",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.13.1"
   }

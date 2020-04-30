@@ -16,6 +16,7 @@ module.exports = {
     '<rootDir>.*/static',
     '<rootDir>/lang',
     '<rootDir>/coverage',
+    '<rootDir>/jest-report',
   ],
   transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
   globals: {
@@ -23,4 +24,14 @@ module.exports = {
   },
   testURL: 'http://localhost',
   setupFiles: ['<rootDir>/jest/loadershim.js'],
+  reporters: [
+    'default',
+    [
+      'jest-html-reporters',
+      {
+        publicPath: './jest-report',
+        filename: 'index.html',
+      },
+    ],
+  ],
 };
