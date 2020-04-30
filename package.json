@@ -1,10 +1,24 @@
 {
   "name": "react-code-template",
-  "version": "1.0.0",
+  "private": true,
   "description": "Base code strcuture for React front-end project.",
-  "main": "index.js",
+  "version": "1.0.0",
   "author": "Vu Thai Duy <vuthaiduy1990@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^2.20.12",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
   "devDependencies": {
+    "prettier": "^1.19.1"
   }
 }
