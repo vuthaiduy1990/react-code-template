@@ -25,7 +25,9 @@
     "arrow-body-style": "off",
     "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": "off",
-    "max-len": ["error", { "code": 120 }]
+    "max-len": ["error", { "code": 120 }],
+    "no-useless-escape": "off",
+    "no-use-before-define": "off"
   },
   "parser": "babel-eslint",
   "parserOptions": {

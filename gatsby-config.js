@@ -9,8 +9,8 @@ module.exports = {
   // muse be siteMetadata. Don't change this name
   // if not you will face the error: Error: Reducers may not dispatch actions.
   siteMetadata: {
-    git: 'https://github.com/vuthaiduy1990/code-template',
-    repo: 'Code Template',
+    git: 'https://github.com/vuthaiduy1990/react-code-template',
+    repo: 'React Code Template',
     author: 'Vu Thai Duy <vuthaiduy199@gmail.com>',
     version: '1.0.0',
     license: 'MIT',

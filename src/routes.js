@@ -1,14 +1,16 @@
 export const Routes = {
   dashboard: {
-    name: 'Dashboard',
+    title: 'Dashboard',
     path: '/dashboard',
   },
   'hero-association': {
-    name: 'Hero Association',
+    title: 'Hero Association',
+    subTitle: "When the time comes, don't go expecting someone to come save you",
     path: '/dashboard/hero-association',
   },
   'monster-association': {
-    name: 'Monster Association',
+    title: 'Monster Association',
+    subTitle: 'The power and the glory',
     path: '/dashboard/monster-association',
   },
 };
