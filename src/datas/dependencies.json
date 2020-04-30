@@ -36,6 +36,10 @@
     "url": "https://github.com/relative-ci/bundle-stats/tree/master/packages/cli#readme"
   },
   {
+    "name": "Babel",
+    "url": "https://babeljs.io/"
+  },
+  {
     "name": "Jest (Testing Framework)",
     "url": "https://jestjs.io/"
   },
@@ -50,5 +54,17 @@
   {
     "name": "Prettier (Code Formatter)",
     "url": "https://prettier.io/"
+  },
+  {
+    "name": "Emotion",
+    "url": "https://emotion.sh"
+  },
+  {
+    "name": "classnames",
+    "url": "https://github.com/JedWatson/classnames"
+  },
+  {
+    "name": "prop-types",
+    "url": "https://github.com/facebook/prop-types"
   }
 ]
