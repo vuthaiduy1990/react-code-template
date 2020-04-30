@@ -9,7 +9,14 @@ module.exports = {
   plugins: [
     // Configure scss module
     // https://www.gatsbyjs.org/packages/gatsby-plugin-sass/
+    // https://www.gatsbyjs.org/packages/gatsby-plugin-less/?=less
     'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-less',
+      options: {
+        javascriptEnabled: true,
+      },
+    },
 
     // Emotion, Css in JS library
     // https://github.com/emotion-js/emotion
@@ -41,6 +48,16 @@ module.exports = {
           '@@utils': path.resolve(__dirname, 'src/utils'),
         },
         extensions: ['js', 'css', 'sass', 'scss'],
+      },
+    },
+    // Configure babel import
+    // https://www.gatsbyjs.org/packages/gatsby-plugin-import
+    {
+      resolve: 'gatsby-plugin-import',
+      options: {
+        libraryName: 'antd',
+        libraryDirectory: 'es',
+        style: true,
       },
     },
   ],
