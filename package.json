@@ -14,7 +14,9 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.28",
     "gatsby": "^2.20.12",
+    "gatsby-plugin-emotion": "^4.2.1",
     "gatsby-plugin-sass": "^2.2.1",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
