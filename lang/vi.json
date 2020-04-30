@@ -1,3 +1,6 @@
 {
-  "title": "Chào anh em"
+  "copyright": "Copyright@2020",
+  "version": "Phiên bản",
+  "license": "License",
+  "dependencies": "Phần mềm phụ thuộc"
 }

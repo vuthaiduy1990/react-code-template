@@ -1,0 +1,54 @@
+[
+  {
+    "name": "React",
+    "url": "https://reactjs.org/"
+  },
+  {
+    "name": "Gatsby",
+    "url": "https://www.gatsbyjs.org/"
+  },
+  {
+    "name": "Ant Design",
+    "url": "https://ant.design/"
+  },
+  {
+    "name": "FontAwsome",
+    "url": "https://fontawesome.com/"
+  },
+  {
+    "name": "React-i18next",
+    "url": "https://react.i18next.com/"
+  },
+  {
+    "name": "Reach Router",
+    "url": "https://reach.tech/router"
+  },
+  {
+    "name": "Wepack",
+    "url": "https://webpack.js.org/"
+  },
+  {
+    "name": "Wepack Bundle Analyzer",
+    "url": "https://www.npmjs.com/package/webpack-bundle-analyzer"
+  },
+  {
+    "name": "Bundle Stats",
+    "url": "https://github.com/relative-ci/bundle-stats/tree/master/packages/cli#readme"
+  },
+  {
+    "name": "Jest (Testing Framework)",
+    "url": "https://jestjs.io/"
+  },
+  {
+    "name": "Jest Html Reporter",
+    "url": "https://github.com/Hargne/jest-html-reporter#readme"
+  },
+  {
+    "name": "Eslint (Code Checking Tool)",
+    "url": "https://eslint.org/"
+  },
+  {
+    "name": "Prettier (Code Formatter)",
+    "url": "https://prettier.io/"
+  }
+]

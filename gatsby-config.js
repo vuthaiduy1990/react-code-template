@@ -6,6 +6,15 @@
 const path = require('path');
 
 module.exports = {
+  // muse be siteMetadata. Don't change this name
+  // if not you will face the error: Error: Reducers may not dispatch actions.
+  siteMetadata: {
+    git: 'https://github.com/vuthaiduy1990/code-template',
+    repo: 'Code Template',
+    author: 'Vu Thai Duy <vuthaiduy199@gmail.com>',
+    version: '1.0.0',
+    license: 'MIT',
+  },
   plugins: [
     // Configure scss module
     // https://www.gatsbyjs.org/packages/gatsby-plugin-sass/
@@ -54,6 +63,7 @@ module.exports = {
           '@@components': path.resolve(__dirname, 'src/components'),
           '@@pages': path.resolve(__dirname, 'src/__pages__'),
           '@@utils': path.resolve(__dirname, 'src/utils'),
+          '@@datas': path.resolve(__dirname, 'src/datas'),
         },
         extensions: ['js', 'css', 'sass', 'scss'],
       },

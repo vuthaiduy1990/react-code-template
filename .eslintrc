@@ -9,7 +9,8 @@
       "alias": [
         ["@@components", "./src/components"],
         ["@@pages", "./src/__pages__"],
-        ["@@utils", "./src/utils"]
+        ["@@utils", "./src/utils"],
+        ["@@datas", "./src/datas"]
       ]
     }
   },
@@ -21,6 +22,7 @@
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/anchor-is-valid": "off",
     "arrow-parens": "off",
+    "arrow-body-style": "off",
     "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": "off",
     "max-len": ["error", { "code": 120 }]

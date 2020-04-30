@@ -2,9 +2,9 @@
   "name": "react-code-template",
   "private": true,
   "description": "Base code strcuture for React front-end project.",
-  "version": "1.0.0",
-  "author": "Vu Thai Duy <vuthaiduy1990@gmail.com>",
+  "version": "0.1.0",
   "license": "MIT",
+  "author": "Vu Thai Duy <vuthaiduy199@gmail.com>",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",

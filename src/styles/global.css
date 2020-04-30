@@ -4,9 +4,11 @@
 }
 
 html {
-  background-color: lavenderblush;
+  background-color: white;
 }
 
 body {
   font-family: "Arvo" !important;
+  margin: 0 !important;
+  font-size: 16px !important;
 }
