@@ -1,3 +1,9 @@
-import React from "react"
+import React from 'react';
+import App from '../app';
 
-export default () => <div>Hello world!</div>
+const Root = () => (
+  <>
+    <App />
+  </>
+);
+export default Root;

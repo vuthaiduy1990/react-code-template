@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@@components": ["src/components"],
-      "@@pages": ["src/pages"],
+      "@@pages": ["src/__pages__"],
       "@@utils": ["src/utils"]
     }
   }
