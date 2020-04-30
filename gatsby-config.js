@@ -60,5 +60,25 @@ module.exports = {
         style: true,
       },
     },
+    // Wepack bundle analyzer
+    // https://www.npmjs.com/package/webpack-bundle-analyzer
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+      options: {
+        analyzerMode: 'static',
+        reportFilename: '../analyzer/bundler-analyzer.html',
+        openAnalyzer: false,
+      },
+    },
+    // like Wepack Bundle Analyzer but different GUI
+    // https://www.gatsbyjs.org/packages/gatsby-plugin-bundle-stats/?=wepack
+    {
+      resolve: 'gatsby-plugin-bundle-stats',
+      options: {
+        compare: true,
+        baseline: true,
+        outDir: '../analyzer',
+      },
+    },
   ],
 };
