@@ -9,8 +9,15 @@ module.exports = {
   plugins: [
     // Configure scss module
     // https://www.gatsbyjs.org/packages/gatsby-plugin-sass/
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        cssLoaderOptions: {
+          camelCase: false,
+        },
+      },
+    },
     // https://www.gatsbyjs.org/packages/gatsby-plugin-less/?=less
-    'gatsby-plugin-sass',
     {
       resolve: 'gatsby-plugin-less',
       options: {
@@ -37,6 +44,7 @@ module.exports = {
         },
       },
     },
+
     // Configure alias
     // https://www.gatsbyjs.org/packages/gatsby-plugin-alias-imports/
     {
@@ -50,6 +58,7 @@ module.exports = {
         extensions: ['js', 'css', 'sass', 'scss'],
       },
     },
+
     // Configure babel import
     // https://www.gatsbyjs.org/packages/gatsby-plugin-import
     {
@@ -60,6 +69,7 @@ module.exports = {
         style: true,
       },
     },
+
     // Wepack bundle analyzer
     // https://www.npmjs.com/package/webpack-bundle-analyzer
     {
