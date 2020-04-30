@@ -1,24 +1,23 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import { Router } from '@reach/router';
+import loadable from '@loadable/component';
 
 import { Routes } from './routes';
 import MainLayout from './layout/main-layout';
 
-const Dashboard = lazy(() => import('@@pages/dashboard'));
-const HeroAssociation = lazy(() => import('@@pages/hero-association'));
-const MonsterAssociation = lazy(() => import('@@pages/monster-association'));
-const NotFound = lazy(() => import('@@pages/not-found'));
+const Dashboard = loadable(() => import('@@pages/dashboard'));
+const HeroAssociation = loadable(() => import('@@pages/hero-association'));
+const MonsterAssociation = loadable(() => import('@@pages/monster-association'));
+const NotFound = loadable(() => import('@@pages/not-found'));
 
 const App = () => (
   <MainLayout>
-    <Suspense fallback={<div>Loading...</div>}>
-      <Router>
-        <Dashboard path={Routes.dashboard.path} />
-        <HeroAssociation path={Routes['hero-association'].path} />
-        <MonsterAssociation path={Routes['monster-association'].path} />
-        <NotFound default />
-      </Router>
-    </Suspense>
+    <Router>
+      <Dashboard path={Routes.dashboard.path} />
+      <HeroAssociation path={Routes['hero-association'].path} />
+      <MonsterAssociation path={Routes['monster-association'].path} />
+      <NotFound default />
+    </Router>
   </MainLayout>
 );
 export default App;
