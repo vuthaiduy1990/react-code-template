@@ -7,8 +7,8 @@
 module.exports = {
   /* Your site config here */
   plugins: [
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-emotion`,
+    'gatsby-plugin-sass',
+    'gatsby-plugin-emotion',
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
