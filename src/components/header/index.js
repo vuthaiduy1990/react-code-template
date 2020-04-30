@@ -47,10 +47,10 @@ const Header = ({ routes }) => {
 };
 
 Header.propTypes = {
-  routes: PropTypes.objectOf({
-    title: PropTypes.string.isRequired,
+  routes: PropTypes.shape({
+    title: PropTypes.string,
     subTitle: PropTypes.string,
-    path: PropTypes.string.isRequired,
+    path: PropTypes.string,
   }).isRequired,
 };
 export default memo(Header);

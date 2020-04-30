@@ -3,7 +3,7 @@ import { Router } from '@reach/router';
 import loadable from '@loadable/component';
 
 import { Routes } from './routes';
-import MainLayout from './layout/main-layout';
+import MainLayout from './layouts/main-layout';
 
 const Dashboard = loadable(() => import('@@pages/dashboard'));
 const HeroAssociation = loadable(() => import('@@pages/hero-association'));

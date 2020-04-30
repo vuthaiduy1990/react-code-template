@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 import Footer from '@@components/footer';
 import Header from '@@components/header';
 
@@ -10,7 +11,9 @@ const MainLayout = ({ children }) => {
   return (
     <div className={css['main-layout']}>
       <Header routes={Routes} />
-      <div className={css.body}>{children}</div>
+      <PerfectScrollbar>
+        <div className={css.body}>{children}</div>
+      </PerfectScrollbar>
       <Footer />
     </div>
   );
