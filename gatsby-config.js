@@ -60,10 +60,11 @@ module.exports = {
       resolve: 'gatsby-plugin-alias-imports',
       options: {
         alias: {
-          '@@components': path.resolve(__dirname, 'src/components'),
           '@@pages': path.resolve(__dirname, 'src/__pages__'),
+          '@@components': path.resolve(__dirname, 'src/components'),
           '@@utils': path.resolve(__dirname, 'src/utils'),
           '@@datas': path.resolve(__dirname, 'src/datas'),
+          routes: path.resolve(__dirname, 'src/routes'),
         },
         extensions: ['js', 'css', 'sass', 'scss'],
       },

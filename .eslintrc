@@ -7,10 +7,11 @@
     },
     "import/resolver": {
       "alias": [
-        ["@@components", "./src/components"],
         ["@@pages", "./src/__pages__"],
+        ["@@components", "./src/components"],
         ["@@utils", "./src/utils"],
-        ["@@datas", "./src/datas"]
+        ["@@datas", "./src/datas"],
+        ["routes", "./src/routes"]
       ]
     }
   },
@@ -21,13 +22,16 @@
     "jsx-a11y/no-static-element-interactions": "off",
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
     "arrow-parens": "off",
     "arrow-body-style": "off",
     "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": "off",
     "max-len": ["error", { "code": 120 }],
     "no-useless-escape": "off",
-    "no-use-before-define": "off"
+    "no-use-before-define": "off",
+    "react/require-default-props": "off",
+    "object-curly-newline": "off"
   },
   "parser": "babel-eslint",
   "parserOptions": {

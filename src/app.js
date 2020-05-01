@@ -12,7 +12,7 @@ const NotFound = loadable(() => import('@@pages/not-found'));
 
 const App = () => (
   <MainLayout>
-    <Router>
+    <Router style={{ height: '100%', width: '100%' }}>
       <Dashboard path={Routes.dashboard.path} />
       <HeroAssociation path={Routes['hero-association'].path} />
       <MonsterAssociation path={Routes['monster-association'].path} />

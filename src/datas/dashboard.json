@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Hero Association",
+        "thumbnail": "/img/hero-association.png",
+        "route": "hero-association"
+    },
+    {
+        "title": "Monster Association",
+        "thumbnail": "/img/monster_association.png",
+        "route": "monster-association"
+    },
+    {
+        "title": "Fubuki Group",
+        "thumbnail": "/img/fubuki-group.png",
+        "route": ""
+    },
+    {
+        "title": "Dark Matter Thieves",
+        "thumbnail": "/img/dark-matter-thieves.png",
+        "route": ""
+    }
+]
