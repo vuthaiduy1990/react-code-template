@@ -27,6 +27,7 @@
 * Analyze bundle size with [Wepack-Bundle-Analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) and [Bundle Stats](https://github.com/relative-ci/bundle-stats/tree/master/packages/cli#readme), [e161d13](https://github.com/vuthaiduy1990/react-code-template/commit/e161d132a0e475e07aa64bc2103fec8a18202eb7)
 * Install Ant Design
 * Basic Routing [cf11ec1](https://github.com/vuthaiduy1990/react-code-template/commit/cf11ec16ee80da47ed6ae1fce7d47df48ed33995)
+* Render breadcrumb from routes [b6e04b7](https://github.com/vuthaiduy1990/react-code-template/commit/b6e04b746564bdc99bc6682566cb30f944102269)
 
 
 ## 🔗 Dependencies
