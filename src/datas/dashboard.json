@@ -12,7 +12,8 @@
     {
         "title": "Fubuki Group",
         "thumbnail": "/img/fubuki-group.png",
-        "route": ""
+        "route": "",
+        "gallery": ["/img/fubuki-group/ev72ff0c4iw41.png", "/img/fubuki-group/Bang_Bomb_Fubuki_Overgrown_Rover.png", "/img/fubuki-group/hrsz3wp096n41.png", "/img/fubuki-group/m9foakx2o4v41.png", "/img/fubuki-group/rg4s1ngos6b31.png", "/img/fubuki-group/1watx1f_1280.png"]
     },
     {
         "title": "Dark Matter Thieves",

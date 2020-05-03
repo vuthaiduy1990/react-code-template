@@ -28,7 +28,8 @@
 * Install Ant Design
 * Basic Routing [cf11ec1](https://github.com/vuthaiduy1990/react-code-template/commit/cf11ec16ee80da47ed6ae1fce7d47df48ed33995)
 * Render breadcrumb from routes [b6e04b7](https://github.com/vuthaiduy1990/react-code-template/commit/b6e04b746564bdc99bc6682566cb30f944102269)
-
+* Lazy load with react-lazyload [2548f1e - GridView](https://github.com/vuthaiduy1990/react-code-template/commit/2548f1e78af94e981fcea2ccafadb253f10ecaa5)
+* Display modal dialog using declarative way [1ed2c81](https://github.com/vuthaiduy1990/react-code-template/commit/1ed2c8188dd58a7b7497acc09c97b2585c64b90c)
 
 ## 🔗 Dependencies
 

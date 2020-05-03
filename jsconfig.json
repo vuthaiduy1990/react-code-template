@@ -4,6 +4,7 @@
     "paths": {
       "@@pages": ["src/__pages__"],
       "@@components": ["src/components"],
+      "@@dialogs": ["src/dialogs"],
       "@@utils": ["src/utils"],
       "@@datas": ["src/datas"],
       "routes": ["src/routes"]

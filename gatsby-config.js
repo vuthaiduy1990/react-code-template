@@ -62,6 +62,7 @@ module.exports = {
         alias: {
           '@@pages': path.resolve(__dirname, 'src/__pages__'),
           '@@components': path.resolve(__dirname, 'src/components'),
+          '@@dialogs': path.resolve(__dirname, 'src/dialogs'),
           '@@utils': path.resolve(__dirname, 'src/utils'),
           '@@datas': path.resolve(__dirname, 'src/datas'),
           routes: path.resolve(__dirname, 'src/routes'),
