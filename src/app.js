@@ -3,13 +3,15 @@ import { Router, Redirect, useLocation } from '@reach/router';
 import loadable from '@loadable/component';
 import pMinDelay from 'p-min-delay';
 
+import Loading from '@@components/loading';
+
 import { Routes } from './routes';
 import MainLayout from './layouts/main-layout';
 
 const DELAY = 100; // miliseconds
 
 // To avoid flashing a loader if the loading is very fast, you could implement a minimum delay
-const Login = loadable(() => pMinDelay(import('@@pages/login'), DELAY));
+const Login = loadable(() => pMinDelay(import('@@pages/login'), 2000)); // for demo loading indicator
 const Dashboard = loadable(() => pMinDelay(import('@@pages/dashboard'), DELAY));
 const HeroAssociation = loadable(() => pMinDelay(import('@@pages/hero-association'), DELAY));
 const MonsterAssociation = loadable(() => pMinDelay(import('@@pages/monster-association'), DELAY));
@@ -32,7 +34,7 @@ const App = () => {
   return (
     <MainLayout>
       <Router style={{ height: '100%', width: '100%' }}>
-        <Login path="/login" />
+        <Login path="/login" fallback={<Loading />} />
         <Dashboard path={Routes.dashboard.path} />
         <HeroAssociation path={Routes['hero-association'].path} />
         <MonsterAssociation path={Routes['monster-association'].path} />
