@@ -2,5 +2,11 @@
   "copyright": "Copyright@2020",
   "version": "Version",
   "license": "License",
-  "dependencies": "Dependencies"
+  "dependencies": "Dependencies",
+  "username": "Username",
+  "username.require": "Please input your username!",
+  "password": "Password",
+  "password.require": "Please input your password!",
+  "login": "login",
+  "register.new": "Register new account"
 }

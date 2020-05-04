@@ -27,6 +27,7 @@
 * Analyze bundle size with [Wepack-Bundle-Analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) and [Bundle Stats](https://github.com/relative-ci/bundle-stats/tree/master/packages/cli#readme), [e161d13](https://github.com/vuthaiduy1990/react-code-template/commit/e161d132a0e475e07aa64bc2103fec8a18202eb7)
 * Install Ant Design
 * Basic Routing [cf11ec1](https://github.com/vuthaiduy1990/react-code-template/commit/cf11ec16ee80da47ed6ae1fce7d47df48ed33995)
+* Login Page and basic login redirect handler [7ba2443](https://github.com/vuthaiduy1990/react-code-template/commit/7ba24439e8a8059c0cadd1b42e99bdad3b290f72)
 * Not-found page [140759d](https://github.com/vuthaiduy1990/react-code-template/commit/140759d82e34ebf3f8754d72cd97650b21ebf231), [cf11ec1](https://github.com/vuthaiduy1990/react-code-template/commit/cf11ec16ee80da47ed6ae1fce7d47df48ed33995)
 * Render breadcrumb from routes [b6e04b7](https://github.com/vuthaiduy1990/react-code-template/commit/b6e04b746564bdc99bc6682566cb30f944102269)
 * Lazy load with react-lazyload [2548f1e - GridView](https://github.com/vuthaiduy1990/react-code-template/commit/2548f1e78af94e981fcea2ccafadb253f10ecaa5)

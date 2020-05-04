@@ -38,5 +38,11 @@
   "parserOptions": {
     "sourceType": "module",
     "allowImportExportEverywhere": true
+  },
+  "globals": {
+    "window": true,
+    "document": true,
+    "sessionStorage": true,
+    "localStorage": true
   }
 }
