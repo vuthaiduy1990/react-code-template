@@ -66,5 +66,17 @@
   {
     "name": "prop-types",
     "url": "https://github.com/facebook/prop-types"
+  },
+  {
+    "name": "react-lazyload",
+    "url": "https://github.com/twobin/react-lazyload"
+  },
+  {
+    "name": "react-perfect-scrollbar",
+    "url": "https://github.com/goldenyz/react-perfect-scrollbar"
+  },
+  {
+    "name": "p-min-delay",
+    "url": "https://github.com/sindresorhus/p-min-delay"
   }
 ]

@@ -29,11 +29,11 @@
 * Basic Routing [cf11ec1](https://github.com/vuthaiduy1990/react-code-template/commit/cf11ec16ee80da47ed6ae1fce7d47df48ed33995)
 * Login Page and basic login redirect handler [16add8b](https://github.com/vuthaiduy1990/react-code-template/commit/16add8b89ff79a8d6263ef6d991bf84aa565c120)
 * Not-found page [140759d](https://github.com/vuthaiduy1990/react-code-template/commit/140759d82e34ebf3f8754d72cd97650b21ebf231), [cf11ec1](https://github.com/vuthaiduy1990/react-code-template/commit/cf11ec16ee80da47ed6ae1fce7d47df48ed33995)
-* Use loadable-components for code spliting and loading [9ff6cb3](https://github.com/vuthaiduy1990/react-code-template/commit/9ff6cb3dae811e42c8012729ab99a1cb6add143f), [6c34f20](https://github.com/vuthaiduy1990/react-code-template/commit/6c34f2068ec517f49bff62d0ea005c24f615de27)
+* Use loadable-components for code spliting and loading [9ff6cb3](https://github.com/vuthaiduy1990/react-code-template/commit/9ff6cb3dae811e42c8012729ab99a1cb6add143f), [6c34f20](https://github.com/vuthaiduy1990/react-code-template/commit/6c34f2068ec517f49bff62d0ea005c24f615de27), [5096e4d](https://github.com/vuthaiduy1990/react-code-template/commit/5096e4d694e102a2b4ca6882c13dba9df44fe196)
 * Render breadcrumb from routes [b6e04b7](https://github.com/vuthaiduy1990/react-code-template/commit/b6e04b746564bdc99bc6682566cb30f944102269)
 * Lazy load with react-lazyload [2548f1e - GridView](https://github.com/vuthaiduy1990/react-code-template/commit/2548f1e78af94e981fcea2ccafadb253f10ecaa5)
 * Display modal dialog using declarative way [5708b24](https://github.com/vuthaiduy1990/react-code-template/commit/5708b24d7c59fade1308528b698908d74147a370)
-
+* Loading indicator [5096e4d](https://github.com/vuthaiduy1990/react-code-template/commit/5096e4d694e102a2b4ca6882c13dba9df44fe196)
 
 ## 🔗 Dependencies
 
@@ -41,7 +41,8 @@
 #### [Jest (Testing Framework)](https://jestjs.io/), [Jest Html Reporter](https://github.com/Hargne/jest-html-reporter#readme)
 #### [Wepack](https://webpack.js.org/), [Wepack Bundle Analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer), [Bundle Stats](https://github.com/relative-ci/bundle-stats/tree/master/packages/cli#readme), [Babel](https://babeljs.io/)
 #### [Eslint (Code Checking)](https://eslint.org/), [Prettier (Code Formatter)](https://prettier.io/)
-#### [Emotion](https://emotion.sh), [classnames](https://github.com/JedWatson/classnames), [prop-types](https://github.com/facebook/prop-types)
+#### [Emotion](https://emotion.sh), [classnames](https://github.com/JedWatson/classnames), [prop-types](https://github.com/facebook/prop-types), [react-lazyload](https://github.com/twobin/react-lazyload), [react-perfect-scrollbar](https://github.com/goldenyz/react-perfect-scrollbar), [p-min-delay](https://github.com/sindresorhus/p-min-delay)
+
 ## :memo: License
 
 Licensed under the [MIT License](./LICENSE).
