@@ -3,7 +3,7 @@
  */
 import React, { memo, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { Modal, Button, Carousel, Space } from 'antd';
+import { Modal, Carousel, Space } from 'antd';
 import LazyLoad from 'react-lazyload';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleLeft, faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
@@ -33,12 +33,9 @@ const GalleryDialog = ({ title, photos, isOpen, toggleClose, height }) => {
       title={title}
       onCancel={toggleClose}
       footer={[
-        <Space size="middle" key="footer-group">
+        <Space size="middle" key="footer-group" className={css.footer}>
           <FontAwesomeIcon icon={faChevronCircleLeft} size="2x" className={css.icon} onClick={slidePre} />
           <FontAwesomeIcon icon={faChevronCircleRight} size="2x" className={css.icon} onClick={slideNext} />
-          <Button key="close" onClick={toggleClose}>
-            Close
-          </Button>
         </Space>,
       ]}
     >

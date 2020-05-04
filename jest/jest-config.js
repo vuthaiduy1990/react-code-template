@@ -17,6 +17,7 @@ module.exports = {
     '<rootDir>/lang',
     '<rootDir>/coverage',
     '<rootDir>/jest-report',
+    '<rootDir>/analyzer',
   ],
   transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
   globals: {

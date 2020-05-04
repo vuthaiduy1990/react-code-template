@@ -15,7 +15,7 @@ pids
 lib-cov
 
 # Coverage directory used by tools like istanbul
-coverage
+/coverage
 jest-report
 
 # nyc test coverage
@@ -58,7 +58,7 @@ typings/
 # gatsby files
 .cache/
 public
-analyzer
+/analyzer
 
 # Mac files
 .DS_Store
