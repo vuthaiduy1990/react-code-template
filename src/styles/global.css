@@ -12,3 +12,38 @@ body {
   margin: 0 !important;
   font-size: 16px !important;
 }
+
+/* Full HD desktop screen */
+@media screen and (min-width: 1366px) {
+  h4.ant-typography {
+    font-size: 20px !important;
+  }
+}
+
+/* HD desktop screen */
+@media screen and (min-width: 992px) and (max-width: 1366px) {
+  h4.ant-typography {
+    font-size: 16px !important;
+  }
+}
+
+/* Medium desktop screen */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  h4.ant-typography {
+    font-size: 14px !important;
+  }
+}
+
+/* Tablet device */
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  h4.ant-typography {
+    font-size: 12px !important;
+  }
+}
+
+/* Mobile phone device */
+@media screen and (max-width: 576px) {
+  h4.ant-typography {
+    font-size: 10px !important;
+  }
+}
