@@ -1,15 +1,19 @@
 import React from 'react';
 import { Router, Redirect, useLocation } from '@reach/router';
 import loadable from '@loadable/component';
+import pMinDelay from 'p-min-delay';
 
 import { Routes } from './routes';
 import MainLayout from './layouts/main-layout';
 
-const Login = loadable(() => import('@@pages/login'));
-const Dashboard = loadable(() => import('@@pages/dashboard'));
-const HeroAssociation = loadable(() => import('@@pages/hero-association'));
-const MonsterAssociation = loadable(() => import('@@pages/monster-association'));
-const NotFound = loadable(() => import('@@pages/not-found'));
+const DELAY = 100; // miliseconds
+
+// To avoid flashing a loader if the loading is very fast, you could implement a minimum delay
+const Login = loadable(() => pMinDelay(import('@@pages/login'), DELAY));
+const Dashboard = loadable(() => pMinDelay(import('@@pages/dashboard'), DELAY));
+const HeroAssociation = loadable(() => pMinDelay(import('@@pages/hero-association'), DELAY));
+const MonsterAssociation = loadable(() => pMinDelay(import('@@pages/monster-association'), DELAY));
+const NotFound = loadable(() => pMinDelay(import('@@pages/not-found'), DELAY));
 
 const App = () => {
   const location = useLocation();
