@@ -41,8 +41,6 @@
   },
   "globals": {
     "window": true,
-    "document": true,
-    "sessionStorage": true,
-    "localStorage": true
+    "document": true
   }
 }

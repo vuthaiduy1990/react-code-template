@@ -13,7 +13,7 @@ const NotFound = loadable(() => import('@@pages/not-found'));
 
 const App = () => {
   const location = useLocation();
-  const isLogged = sessionStorage.getItem('account') !== null;
+  const isLogged = typeof window !== 'undefined' && window.sessionStorage.getItem('account') !== null;
 
   if (isLogged) {
     // redirect to dashboard if user already logged in

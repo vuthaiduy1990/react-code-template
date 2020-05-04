@@ -18,7 +18,7 @@ const Login = () => {
     message.info(`${formData.username} - ${formData.password}`, 3);
 
     // redirecto to dashboard page
-    sessionStorage.setItem('account', JSON.stringify(formData));
+    window.sessionStorage.setItem('account', JSON.stringify(formData));
     navigate(routeState.redirectTo || '/', { replace: true });
   });
 
