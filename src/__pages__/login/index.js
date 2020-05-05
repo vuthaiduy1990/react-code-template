@@ -1,15 +1,19 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useRef } from 'react';
 import { useNavigate, useLocation } from '@reach/router';
 import { Form, Input, Button, Row, Col, Space, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 
 import css from './styles.module.scss';
+import RegisterModal from './register-modal';
 
 const Login = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
   const routeState = location.state || {};
+
+  // reference to register modal dialog
+  const registerModalRef = useRef();
 
   /**
    * Trigger when click login button
@@ -36,7 +40,21 @@ const Login = () => {
    * Trigger when user click on register button link
    */
   const onRegisterBtnClick = useCallback(() => {
-    // show register modal dialog
+    registerModalRef.current.show({});
+  }, []);
+
+  /**
+   * On register submit
+   */
+  const onRegisterModalSubmit = useCallback((originData, formData) => {
+    message.info(`register modal submitted - ${formData.username}`, 3);
+  }, []);
+
+  /**
+   * ON register modal close
+   */
+  const onRegisterModalClose = useCallback(() => {
+    message.info('register modal closed', 3);
   }, []);
 
   return (
@@ -80,6 +98,7 @@ const Login = () => {
           </Form>
         </Col>
       </Row>
+      <RegisterModal ref={registerModalRef} onSubmit={onRegisterModalSubmit} onClose={onRegisterModalClose} />
     </>
   );
 };
