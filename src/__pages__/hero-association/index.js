@@ -12,16 +12,18 @@ const HeroAssociation = () => {
    */
   const onItemClick = useCallback(data => {
     message.info(data.title, 1);
-  });
+  }, []);
 
   return (
-    <div className={css.layout}>
-      <Row style={{ height: '100%', alignItems: 'center' }}>
-        <Col span={16} offset={4}>
-          <GridView dataset={dataset} col={6} onItemClick={onItemClick} />
-        </Col>
-      </Row>
-    </div>
+    <>
+      <div className={css.layout}>
+        <Row style={{ height: '100%', alignItems: 'center' }}>
+          <Col span={16} offset={4}>
+            <GridView dataset={dataset} col={6} onItemClick={onItemClick} />
+          </Col>
+        </Row>
+      </div>
+    </>
   );
 };
 export default HeroAssociation;

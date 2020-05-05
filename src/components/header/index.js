@@ -1,4 +1,3 @@
-/* eslint-disable comma-dangle */
 import React, { memo } from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { useLocation } from '@reach/router';

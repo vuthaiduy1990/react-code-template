@@ -1,5 +1,5 @@
 {
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "react-hooks"],
   "extends": "airbnb",
   "settings": {
     "react": {
@@ -32,7 +32,10 @@
     "no-useless-escape": "off",
     "no-use-before-define": "off",
     "react/require-default-props": "off",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "comma-dangle": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
   "parser": "babel-eslint",
   "parserOptions": {

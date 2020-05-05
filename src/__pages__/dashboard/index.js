@@ -17,23 +17,26 @@ const Dashboard = () => {
   /**
    * Trigger when user click on an thumbnail
    */
-  const onItemClick = useCallback(data => {
-    if (data.title === 'Fubuki Group') {
-      setSelected(data);
-      setGalleryDialogOpen(true);
-      return;
-    }
+  const onItemClick = useCallback(
+    data => {
+      if (data.title === 'Fubuki Group') {
+        setSelected(data);
+        setGalleryDialogOpen(true);
+        return;
+      }
 
-    if (!data.route || data.route.trim().length === '') return;
-    navigate(Routes[data.route].path);
-  });
+      if (!data.route || data.route.trim().length === '') return;
+      navigate(Routes[data.route].path);
+    },
+    [navigate]
+  );
 
   /**
    * Toggle gallery dialog
    */
   const toggleGalleryDialog = useCallback(() => {
     setGalleryDialogOpen(!galleryDialogOpen);
-  });
+  }, [galleryDialogOpen]);
 
   return (
     <>
@@ -50,7 +53,7 @@ const Dashboard = () => {
           photos={selected.gallery}
           isOpen={galleryDialogOpen}
           toggleClose={toggleGalleryDialog}
-          height={500}
+          height="calc(100vh * 0.6)"
         />
       ) : null}
     </>

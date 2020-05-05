@@ -1,5 +1,4 @@
-/* eslint-disable comma-dangle */
-import React, { useCallback } from 'react';
+import React, { useCallback, memo } from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col, Typography } from 'antd';
 import LazyLoad from 'react-lazyload';
@@ -14,30 +13,35 @@ const GridView = ({ dataset, col, onItemClick }) => {
   /**
    * Trigger when user click on thumbnail or title
    */
-  const onClick = useCallback(data => () => {
-    if (onItemClick) onItemClick(data);
-  });
+  const onClick = useCallback(
+    data => () => {
+      if (onItemClick) onItemClick(data);
+    },
+    [onItemClick]
+  );
 
   return (
-    <LazyLoad>
-      {GRID_ROWS.map((row, rIdx) => (
-        <Row gutter={[48, 16]} key={row}>
-          {GRID_COLS.map((_, cIdx) => {
-            const data = dataset[rIdx * GRID_COLS.length + cIdx];
-            return data ? (
-              <Col span={24 / col} key={data.title} className={css.cell}>
-                <LazyLoad>
-                  <img src={data.thumbnail} alt="" style={{ width: '100%' }} onClick={onClick(data)} />
-                </LazyLoad>
-                <Title level={4} className={css.title}>
-                  {data.title}
-                </Title>
-              </Col>
-            ) : null;
-          })}
-        </Row>
-      ))}
-    </LazyLoad>
+    <>
+      <LazyLoad>
+        {GRID_ROWS.map((row, rIdx) => (
+          <Row gutter={[48, 16]} key={row}>
+            {GRID_COLS.map((_, cIdx) => {
+              const data = dataset[rIdx * GRID_COLS.length + cIdx];
+              return data ? (
+                <Col span={24 / col} key={data.title} className={css.cell}>
+                  <LazyLoad>
+                    <img src={data.thumbnail} alt="" style={{ width: '100%' }} onClick={onClick(data)} />
+                  </LazyLoad>
+                  <Title level={4} className={css.title}>
+                    {data.title}
+                  </Title>
+                </Col>
+              ) : null;
+            })}
+          </Row>
+        ))}
+      </LazyLoad>
+    </>
   );
 };
 
@@ -51,4 +55,4 @@ GridView.propTypes = {
   col: PropTypes.number.isRequired,
   onItemClick: PropTypes.func,
 };
-export default GridView;
+export default memo(GridView);

@@ -10,13 +10,15 @@ import css from './main-layout.module.scss';
 
 const MainLayout = ({ children }) => {
   return (
-    <div className={css['main-layout']}>
-      <Header routes={Routes} />
-      <PerfectScrollbar>
-        <div className={css.body}>{children}</div>
-      </PerfectScrollbar>
-      <Footer />
-    </div>
+    <>
+      <div className={css['main-layout']}>
+        <Header routes={Routes} />
+        <PerfectScrollbar>
+          <div className={css.body}>{children}</div>
+        </PerfectScrollbar>
+        <Footer />
+      </div>
+    </>
   );
 };
 

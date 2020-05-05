@@ -32,15 +32,17 @@ const App = () => {
   }
 
   return (
-    <MainLayout>
-      <Router style={{ height: '100%', width: '100%' }}>
-        <Login path="/login" fallback={<Loading />} />
-        <Dashboard path={Routes.dashboard.path} />
-        <HeroAssociation path={Routes['hero-association'].path} />
-        <MonsterAssociation path={Routes['monster-association'].path} />
-        <NotFound default />
-      </Router>
-    </MainLayout>
+    <>
+      <MainLayout>
+        <Router style={{ height: '100%', width: '100%' }}>
+          <Login path="/login" fallback={<Loading />} />
+          <Dashboard path={Routes.dashboard.path} />
+          <HeroAssociation path={Routes['hero-association'].path} />
+          <MonsterAssociation path={Routes['monster-association'].path} />
+          <NotFound default />
+        </Router>
+      </MainLayout>
+    </>
   );
 };
 export default App;

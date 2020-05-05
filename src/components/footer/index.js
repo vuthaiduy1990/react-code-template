@@ -1,5 +1,3 @@
-/* eslint-disable comma-dangle */
-
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useStaticQuery, graphql } from 'gatsby';
@@ -40,30 +38,32 @@ const Footer = () => {
   );
 
   return (
-    <div className={css.footer}>
-      <span className={css.copyright}>
-        {t('copyright')}
-        &nbsp;&nbsp;
-        <a href={siteMetadata.git} target="blank">
-          {siteMetadata.repo}
-        </a>
-      </span>
-      <div className={css.info}>
-        <span>{`${t('version')} ${siteMetadata.version}`}</span>
-        <span _css_="divider">|</span>
-        <a href="https://en.wikipedia.org/wiki/MIT_License" target="blank">
-          {siteMetadata.license}
-        </a>
-        &nbsp;&nbsp;
-        <Tooltip placement="topRight" title={t('dependencies')}>
-          <Dropdown overlay={menu} placement="topRight" trigger={['click']}>
-            <i _css_="bug">
-              <FontAwesomeIcon icon={faBug} spin />
-            </i>
-          </Dropdown>
-        </Tooltip>
+    <>
+      <div className={css.footer}>
+        <span className={css.copyright}>
+          {t('copyright')}
+          &nbsp;&nbsp;
+          <a href={siteMetadata.git} target="blank">
+            {siteMetadata.repo}
+          </a>
+        </span>
+        <div className={css.info}>
+          <span>{`${t('version')} ${siteMetadata.version}`}</span>
+          <span _css_="divider">|</span>
+          <a href="https://en.wikipedia.org/wiki/MIT_License" target="blank">
+            {siteMetadata.license}
+          </a>
+          &nbsp;&nbsp;
+          <Tooltip placement="topRight" title={t('dependencies')}>
+            <Dropdown overlay={menu} placement="topRight" trigger={['click']}>
+              <i _css_="bug">
+                <FontAwesomeIcon icon={faBug} spin />
+              </i>
+            </Dropdown>
+          </Tooltip>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

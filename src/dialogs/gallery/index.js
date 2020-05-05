@@ -18,19 +18,20 @@ const GalleryDialog = ({ title, photos, isOpen, toggleClose, height }) => {
    */
   const slideNext = useCallback(() => {
     carouselRef.current.prev();
-  });
+  }, []);
 
   /**
    * slide preivous image
    */
   const slidePre = useCallback(() => {
     carouselRef.current.next();
-  });
+  }, []);
 
   return (
     <Modal
       visible={isOpen}
       title={title}
+      centered
       onCancel={toggleClose}
       footer={[
         <Space size="middle" key="footer-group" className={css.footer}>
