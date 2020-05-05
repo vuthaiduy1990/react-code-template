@@ -14,6 +14,7 @@
 
 ## 📌 Features
 
+* [Coding Rules](https://github.com/vuthaiduy1990/react-code-template/blob/master/CodingRules.md)
 * Css module (scss, less) [37dd2d6](https://github.com/vuthaiduy1990/react-code-template/commit/37dd2d669c3ee9f4e917261b0fda83c9009cf3f5)
 * CSS-in-JS library [(emotion)](https://emotion.sh)
 * Import custom font [9d67b4c](https://github.com/vuthaiduy1990/react-code-template/commit/9d67b4ce25cb594ebcd3aee775afc732961098e1)
@@ -33,6 +34,7 @@
 * Render breadcrumb from routes [b6e04b7](https://github.com/vuthaiduy1990/react-code-template/commit/b6e04b746564bdc99bc6682566cb30f944102269)
 * Lazy load with react-lazyload [2548f1e - GridView](https://github.com/vuthaiduy1990/react-code-template/commit/2548f1e78af94e981fcea2ccafadb253f10ecaa5)
 * Display modal dialog using declarative way [5708b24](https://github.com/vuthaiduy1990/react-code-template/commit/5708b24d7c59fade1308528b698908d74147a370)
+* Display modal dialog using imperative way [a5d2bde](https://github.com/vuthaiduy1990/react-code-template/commit/a5d2bde0696105c7b5cb88d5800ea4c7ea3e81a7)
 * Loading indicator [5096e4d](https://github.com/vuthaiduy1990/react-code-template/commit/5096e4d694e102a2b4ca6882c13dba9df44fe196)
 
 ## 🔗 Dependencies

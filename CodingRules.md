@@ -92,7 +92,7 @@ const Parent = () => {
 };
 ```
 
-#### 5. [Readability] Use loadable for loading page or big components
+#### 5. [Performance] Use loadable for loading page or big components
 👍👍👍👍👍
 ```javascript
 const Dashboard = loadable(() => pMinDelay(import('@@pages/dashboard'), DELAY));
