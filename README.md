@@ -35,7 +35,8 @@
 * Lazy load with react-lazyload [2548f1e - GridView](https://github.com/vuthaiduy1990/react-code-template/commit/2548f1e78af94e981fcea2ccafadb253f10ecaa5)
 * Display modal dialog using declarative way [5708b24](https://github.com/vuthaiduy1990/react-code-template/commit/5708b24d7c59fade1308528b698908d74147a370)
 * Display modal dialog using imperative way [a5d2bde](https://github.com/vuthaiduy1990/react-code-template/commit/a5d2bde0696105c7b5cb88d5800ea4c7ea3e81a7)
-* Loading indicator [5096e4d](https://github.com/vuthaiduy1990/react-code-template/commit/5096e4d694e102a2b4ca6882c13dba9df44fe196)
+* Loading indicator [5096e4d](https://github.com/vuthaiduy1990/react-code-template/commit/5096e4d694e102a2b4ca6882c13dba9df44fe196), [8fadbe3](https://github.com/vuthaiduy1990/react-code-template/commit/8fadbe38ea0fc41eceb26f0dbb00f9ed0c149526)
+* How to use global context. (Ex, show/hide loading indicator) [8fadbe3](https://github.com/vuthaiduy1990/react-code-template/commit/8fadbe38ea0fc41eceb26f0dbb00f9ed0c149526)
 
 ## 🔗 Dependencies
 
