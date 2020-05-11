@@ -12,7 +12,8 @@
         ["@@dialogs", "./src/dialogs"],
         ["@@utils", "./src/utils"],
         ["@@datas", "./src/datas"],
-        ["routes", "./src/routes"]
+        ["routes", "./src/routes"],
+        ["global", "./src/global"]
       ]
     }
   },

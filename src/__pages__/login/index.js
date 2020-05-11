@@ -1,4 +1,5 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useContext } from 'react';
+import GlobalContext from 'global';
 import { useNavigate, useLocation } from '@reach/router';
 import { Form, Input, Button, Row, Col, Space, message } from 'antd';
 import { useTranslation } from 'react-i18next';
@@ -11,6 +12,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const routeState = location.state || {};
+  const global = useContext(GlobalContext);
 
   // reference to register modal dialog
   const registerModalRef = useRef();
@@ -46,9 +48,21 @@ const Login = () => {
   /**
    * On register submit
    */
-  const onRegisterModalSubmit = useCallback((originData, formData) => {
-    message.info(`register modal submitted - ${formData.username}`, 3);
-  }, []);
+  const onRegisterModalSubmit = useCallback(
+    (originData, formData) => {
+      // show loading progress
+      global.loadingRef.current.show();
+
+      // Handle some workload here
+      setTimeout(() => {
+        message.info(`register modal submitted - ${formData.username}`, 3);
+
+        // close loading progress
+        global.loadingRef.current.hide();
+      }, 1000);
+    },
+    [global.loadingRef]
+  );
 
   /**
    * ON register modal close

@@ -66,6 +66,7 @@ module.exports = {
           '@@utils': path.resolve(__dirname, 'src/utils'),
           '@@datas': path.resolve(__dirname, 'src/datas'),
           routes: path.resolve(__dirname, 'src/routes'),
+          global: path.resolve(__dirname, 'src/global'),
         },
         extensions: ['js', 'css', 'sass', 'scss'],
       },
