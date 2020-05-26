@@ -1,10 +1,9 @@
 .ribbon {
-  img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: 0;
-  }
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  z-index: 9999;
 }
 
 .breadcrumbs {
