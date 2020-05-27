@@ -13,4 +13,9 @@ export const Routes = {
     subTitle: 'The power and the glory',
     path: '/dashboard/monster-association',
   },
+  'dark-matter-thieves': {
+    title: 'Dark Matter Thieves',
+    subTitle: 'React-redux, Redux-saga, API example',
+    path: '/dashboard/dark-matter-thieves',
+  },
 };

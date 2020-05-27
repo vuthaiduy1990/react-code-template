@@ -15,6 +15,7 @@ const Login = loadable(() => pMinDelay(import('@@pages/login'), 2000)); // for d
 const Dashboard = loadable(() => pMinDelay(import('@@pages/dashboard'), DELAY));
 const HeroAssociation = loadable(() => pMinDelay(import('@@pages/hero-association'), DELAY));
 const MonsterAssociation = loadable(() => pMinDelay(import('@@pages/monster-association'), DELAY));
+const DarkMatterThieves = loadable(() => pMinDelay(import('@@pages/dark-matter-thieves'), DELAY));
 const NotFound = loadable(() => pMinDelay(import('@@pages/not-found'), DELAY));
 
 const App = () => {
@@ -39,6 +40,7 @@ const App = () => {
           <Dashboard path={Routes.dashboard.path} />
           <HeroAssociation path={Routes['hero-association'].path} />
           <MonsterAssociation path={Routes['monster-association'].path} />
+          <DarkMatterThieves path={Routes['dark-matter-thieves'].path} />
           <NotFound default />
         </Router>
       </MainLayout>
