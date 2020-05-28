@@ -1,6 +1,7 @@
 import { takeLatest, takeEvery, delay, put, select, call } from 'redux-saga/effects';
 
 import { GET_SAMPLE_DATA, INSERT_SAMPLE_DATA, onSampleDataLoaded, onSampleDataInserted } from '@@actions/sample';
+import { setLoadingVisible } from '@@actions/common';
 import { getEmployees } from '../apis/sample';
 
 /**
@@ -11,6 +12,9 @@ import { getEmployees } from '../apis/sample';
  * @see actions/sample.js
  */
 function* getSampleData(action) {
+  // show loading indicator
+  yield put(setLoadingVisible(true));
+
   try {
     yield delay(100); // 😎 delay for fun
     // Do API call here. Something look like
@@ -26,8 +30,17 @@ function* getSampleData(action) {
 
     // Handle callback function
     if (action.callback) action.callback(null, employees);
+
+    // hide loading indicator
+    yield put(setLoadingVisible(false));
   } catch (ex) {
     if (action.callback) action.callback(ex, null);
+
+    // hide loading indicator
+    yield put(setLoadingVisible(false));
+
+    // We can show alart dialog here based on the error's type
+    // yield put(showErrorDialog(ex));
   }
 }
 

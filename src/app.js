@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Router, Redirect, useLocation } from '@reach/router';
 import loadable from '@loadable/component';
 import pMinDelay from 'p-min-delay';
@@ -22,6 +23,9 @@ const App = () => {
   const location = useLocation();
   const isLogged = typeof window !== 'undefined' && window.sessionStorage.getItem('account') !== null;
 
+  // select loading's visibility
+  const loadingVisible = useSelector(state => state.common.loading);
+
   if (isLogged) {
     // redirect to dashboard if user already logged in
     if (location.pathname === '/' || location.pathname === '/login') {
@@ -44,6 +48,7 @@ const App = () => {
           <NotFound default />
         </Router>
       </MainLayout>
+      <Loading visible={loadingVisible} />
     </>
   );
 };
