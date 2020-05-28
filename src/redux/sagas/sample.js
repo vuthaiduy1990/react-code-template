@@ -1,6 +1,7 @@
-import { takeLatest, takeEvery, delay, put, select } from 'redux-saga/effects';
+import { takeLatest, takeEvery, delay, put, select, call } from 'redux-saga/effects';
 
 import { GET_SAMPLE_DATA, INSERT_SAMPLE_DATA, onSampleDataLoaded, onSampleDataInserted } from '@@actions/sample';
+import { getEmployees } from '../apis/sample';
 
 /**
  * Get sample data
@@ -13,12 +14,7 @@ function* getSampleData(action) {
   try {
     yield delay(100); // 😎 delay for fun
     // Do API call here. Something look like
-    // const result = yield call('.....')
-    // The code here is just a stupid sample
-    let result = [1, 2, 3];
-    if (action.type.length > 5) {
-      result = [1, 2, 3, 4, 5];
-    }
+    const result = yield call(getEmployees);
 
     // Dispath data loaded action
     // This action is mapped with respective reducer defined in reducers/sample.js
@@ -45,7 +41,7 @@ function* insertSampleData({ type, payload, callback }) {
   try {
     // DO insert API call here. Something look like
     // const insertedData = yield call(....)
-    const insertData = type.length > 0 ? payload : 6969;
+    const insertData = type.length > 0 ? payload : {};
 
     // Dispath data loaded action
     // This action will map with respective reducer defined in reducers/sample.js

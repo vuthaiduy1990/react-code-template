@@ -27,7 +27,7 @@ const onSampleDataLoaded = (state, { result }) => {
   // https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns
   return {
     ...state,
-    employees: result.map(value => `${value} - color the wind`),
+    employees: result.map(item => ({ ...item, key: `${item.id}`, source: 'dummy.restapiexample.com' })),
   };
 };
 

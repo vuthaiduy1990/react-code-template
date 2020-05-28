@@ -11,6 +11,7 @@
         ["@@components", "./src/components"],
         ["@@dialogs", "./src/dialogs"],
         ["@@utils", "./src/utils"],
+        ["@@const", "./src/const"],
         ["@@datas", "./src/datas"],
         ["@@actions", "./src/redux/actions"],
         ["@@selectors", "./src/redux/selectors"],

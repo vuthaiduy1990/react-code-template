@@ -1,10 +1,39 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Table } from 'antd';
 
 import { getSampleData } from '@@actions/sample';
 import { getEmployees } from '@@selectors/sample';
 
 import css from './styles.module.scss';
+
+const columns = [
+  {
+    title: 'Id',
+    dataIndex: 'id',
+    key: 'id',
+  },
+  {
+    title: 'Employee Name',
+    dataIndex: 'employee_name',
+    key: 'employee_name',
+  },
+  {
+    title: 'Age',
+    dataIndex: 'employee_age',
+    key: 'employee_age',
+  },
+  {
+    title: 'Sallary',
+    dataIndex: 'employee_salary',
+    key: 'employee_salary',
+  },
+  {
+    title: 'Data Source',
+    dataIndex: 'source',
+    key: 'source',
+  },
+];
 
 const DarkMatterThieves = () => {
   const dispatch = useDispatch();
@@ -33,12 +62,9 @@ const DarkMatterThieves = () => {
 
   return (
     <>
-      <div className={css.layout}>Dark Matter Thieves</div>
-      <ul>
-        {employees.map(item => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
+      <div className={css.layout}>
+        <Table dataSource={employees} columns={columns} />
+      </div>
     </>
   );
 };
