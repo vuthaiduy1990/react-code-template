@@ -7,6 +7,8 @@
       "@@dialogs": ["src/dialogs"],
       "@@utils": ["src/utils"],
       "@@datas": ["src/datas"],
+      "@@actions": ["src/redux/actions"],
+      "@@selectors": ["src/redux/selectors"],
       "routes": ["src/routes"],
       "global": ["src/global"]
     }
