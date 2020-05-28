@@ -1,6 +1,7 @@
 ## ✎Coding Rules
 
 #### Also refer to https://reactjs.org/docs/hooks-faq.html
+#### Also refer to https://redux.js.org/style-guide/style-guide
 
 #### 1. [Readability] Always wrap render in React.Fragment
 ```javascript
@@ -48,6 +49,39 @@ const ReactComponent = () => {
 useEffect(() => {
     fetchData(); // only run once when component did mount
 }, []);
+```
+Furthermore, according to this post https://overreacted.io/a-complete-guide-to-useeffect/
+We can omit dispatch, setState, and useRef container values from the deps because React guarantees them to be static
+
+--->>> Sometimes, your effect may be using state that changes too often, we may need to specify dependencies
+```javascript
+❌❌❌❌❌
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCount(count + 1); // This effect depends on the `count` state
+    }, 1000);
+    return () => clearInterval(id);
+  }, []); // 🔴 Bug: `count` is not specified as a dependency
+
+  return <h1>{count}</h1>;
+}
+
+👍👍👍👍👍
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCount(c => c + 1); // ✅ This doesn't depend on `count` variable outside
+    }, 1000);
+    return () => clearInterval(id);
+  }, []); // ✅ Our effect doesn't use any variables in the component scope
+
+  return <h1>{count}</h1>;
+}
 ```
 
 #### 4. [Performance] Pass [] as a dependency array to useCallback

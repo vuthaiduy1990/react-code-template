@@ -15,7 +15,7 @@
 ## 📌 Features
 
 * [Coding Rules](https://github.com/vuthaiduy1990/react-code-template/blob/master/CodingRules.md)
-* Css module (scss, less) [37dd2d6](https://github.com/vuthaiduy1990/react-code-template/commit/37dd2d669c3ee9f4e917261b0fda83c9009cf3f5)
+* Css module (scss, less) [37dd2d6](https://github.com/vuthaiduy1990/react-code-template/commit/37dd2d669c3ee9f4e917261b0fda83c9009cf3f5), [5138f3c](https://github.com/vuthaiduy1990/react-code-template/commit/5138f3cfd725ec9af855f9a8bd0f3ca966dbee57)
 * CSS-in-JS library [(emotion)](https://emotion.sh)
 * Import custom font [9d67b4c](https://github.com/vuthaiduy1990/react-code-template/commit/9d67b4ce25cb594ebcd3aee775afc732961098e1)
 * Install and use Fontawesome [dd99140](https://github.com/vuthaiduy1990/react-code-template/commit/dd99140301a3cbcaf39d0d2067f19face20fe049)
@@ -35,16 +35,21 @@
 * Lazy load with react-lazyload [2548f1e - GridView](https://github.com/vuthaiduy1990/react-code-template/commit/2548f1e78af94e981fcea2ccafadb253f10ecaa5)
 * Display modal dialog using declarative way [5708b24](https://github.com/vuthaiduy1990/react-code-template/commit/5708b24d7c59fade1308528b698908d74147a370)
 * Display modal dialog using imperative way [a5d2bde](https://github.com/vuthaiduy1990/react-code-template/commit/a5d2bde0696105c7b5cb88d5800ea4c7ea3e81a7)
-* Loading indicator [5096e4d](https://github.com/vuthaiduy1990/react-code-template/commit/5096e4d694e102a2b4ca6882c13dba9df44fe196), [8fadbe3](https://github.com/vuthaiduy1990/react-code-template/commit/8fadbe38ea0fc41eceb26f0dbb00f9ed0c149526)
+* Loading indicator [5096e4d](https://github.com/vuthaiduy1990/react-code-template/commit/5096e4d694e102a2b4ca6882c13dba9df44fe196), [8fadbe3](https://github.com/vuthaiduy1990/react-code-template/commit/8fadbe38ea0fc41eceb26f0dbb00f9ed0c149526), [e55e99f](https://github.com/vuthaiduy1990/react-code-template/commit/e55e99f36e0c0f09b8f507eabbd6b168d5305240)
 * How to use global context. (Ex, show/hide loading indicator) [8fadbe3](https://github.com/vuthaiduy1990/react-code-template/commit/8fadbe38ea0fc41eceb26f0dbb00f9ed0c149526)
+* Setup Redux, React-redux, Redux-sage. [78a4217](https://github.com/vuthaiduy1990/react-code-template/commit/78a421729a74a861788afe04e445bb86e2d6cbd6)
+* Rest API call using axis library. [0e890a0](https://github.com/vuthaiduy1990/react-code-template/commit/0e890a0eaf23e9c5b5762b08683be1bc61976e9c), [335fbab](https://github.com/vuthaiduy1990/react-code-template/commit/335fbab040bf448a6bdf9dee0b5b91697d060c64)
+* Use environment variable. [335fbab](https://github.com/vuthaiduy1990/react-code-template/commit/335fbab040bf448a6bdf9dee0b5b91697d060c64)
 
 ## 🔗 Dependencies
 
-#### [React](https://reactjs.org/), [Gatsby](https://www.gatsbyjs.org/), [Ant Design](https://ant.design/), [FontAwsome](https://fontawesome.com/), [React-i18next](https://react.i18next.com/), [Reach Router](https://reach.tech/router)
+#### [React](https://reactjs.org/), [Redux](https://redux.js.org/), [React-redux](https://react-redux.js.org/), [Redux-saga](https://react-redux.js.org/)
+#### [Gatsby](https://www.gatsbyjs.org/), [Ant Design](https://ant.design/), [FontAwsome](https://fontawesome.com/), [React-i18next](https://react.i18next.com/), [Reach Router](https://reach.tech/router)
 #### [Jest (Testing Framework)](https://jestjs.io/), [Jest Html Reporter](https://github.com/Hargne/jest-html-reporter#readme)
 #### [Wepack](https://webpack.js.org/), [Wepack Bundle Analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer), [Bundle Stats](https://github.com/relative-ci/bundle-stats/tree/master/packages/cli#readme), [Babel](https://babeljs.io/)
 #### [Eslint (Code Checking)](https://eslint.org/), [Prettier (Code Formatter)](https://prettier.io/)
 #### [Emotion](https://emotion.sh), [classnames](https://github.com/JedWatson/classnames), [prop-types](https://github.com/facebook/prop-types), [react-lazyload](https://github.com/twobin/react-lazyload), [react-perfect-scrollbar](https://github.com/goldenyz/react-perfect-scrollbar), [p-min-delay](https://github.com/sindresorhus/p-min-delay)
+#### [DummyAPI](http://dummy.restapiexample.com/)
 
 ## :memo: License
 

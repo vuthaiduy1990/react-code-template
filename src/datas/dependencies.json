@@ -4,6 +4,14 @@
     "url": "https://reactjs.org/"
   },
   {
+    "name": "Redux, React-Redux",
+    "url": "https://redux.js.org/"
+  },
+  {
+    "name": "Redux-Saga",
+    "url": "https://react-redux.js.org/"
+  },
+  {
     "name": "Gatsby",
     "url": "https://www.gatsbyjs.org/"
   },
@@ -54,6 +62,10 @@
   {
     "name": "Prettier (Code Formatter)",
     "url": "https://prettier.io/"
+  },
+  {
+    "name": "Dummy Rest API",
+    "url": "http://dummy.restapiexample.com/"
   },
   {
     "name": "Emotion",
