@@ -24,11 +24,15 @@
 
 import { applyMiddleware, compose, createStore } from 'redux';
 import createSagaMiddleware from 'redux-saga';
+import { composeWithDevTools } from 'redux-devtools-extension';
+// import { immutableStateInvariantMiddleware } from 'redux-immutable-state-invariant';
 
 import { MonitorReducer } from '../enhancers';
 import { Logger, CrashReporter } from '../middleware';
 import rootReducer from '../reducers';
 import rootSaga from '../sagas';
+
+const isDevMode = process.env.NODE_ENV === 'development';
 
 /**
  * Configure store
@@ -46,7 +50,10 @@ export default function configStore(initialState) {
   // Enhancers
   // Defined enhancers as arrays for the same coding purpose as middleware
   const enhancers = [middlewareEnhancer, MonitorReducer];
-  const composedEnhancers = compose(...enhancers);
+  // In dev environment, use redux-devtools-extension to manage Redux store
+  // https://github.com/zalmoxisus/redux-devtools-extension
+  const composeFunc = isDevMode ? composeWithDevTools : compose;
+  const composedEnhancers = composeFunc(...enhancers);
 
   // Create store
   const store = createStore(rootReducer, initialState, composedEnhancers);
