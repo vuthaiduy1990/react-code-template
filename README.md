@@ -12,9 +12,12 @@
 
    ```
 
+## 👍 [Coding Rules](https://github.com/vuthaiduy1990/react-code-template/blob/master/CodingRules.md)
+
+## 🔨 [Coding Guide](https://github.com/vuthaiduy1990/react-code-template/blob/master/CodingGuides.md)
+
 ## 📌 Features
 
-* [Coding Rules](https://github.com/vuthaiduy1990/react-code-template/blob/master/CodingRules.md)
 * Css module (scss, less) [37dd2d6](https://github.com/vuthaiduy1990/react-code-template/commit/37dd2d669c3ee9f4e917261b0fda83c9009cf3f5), [5138f3c](https://github.com/vuthaiduy1990/react-code-template/commit/5138f3cfd725ec9af855f9a8bd0f3ca966dbee57)
 * CSS-in-JS library [(emotion)](https://emotion.sh)
 * Import custom font [9d67b4c](https://github.com/vuthaiduy1990/react-code-template/commit/9d67b4ce25cb594ebcd3aee775afc732961098e1)
@@ -40,6 +43,7 @@
 * Setup Redux, React-redux, Redux-sage. [78a4217](https://github.com/vuthaiduy1990/react-code-template/commit/78a421729a74a861788afe04e445bb86e2d6cbd6)
 * Rest API call using axis library. [0e890a0](https://github.com/vuthaiduy1990/react-code-template/commit/0e890a0eaf23e9c5b5762b08683be1bc61976e9c), [335fbab](https://github.com/vuthaiduy1990/react-code-template/commit/335fbab040bf448a6bdf9dee0b5b91697d060c64)
 * Use environment variable. [335fbab](https://github.com/vuthaiduy1990/react-code-template/commit/335fbab040bf448a6bdf9dee0b5b91697d060c64)
+* Setup Redux dev-tool extension. [ee2ba4f9](https://github.com/vuthaiduy1990/react-code-template/commit/ee2ba4f9404c42e614b2df22d0391b9f93350be8)
 
 ## 🔗 Dependencies
 

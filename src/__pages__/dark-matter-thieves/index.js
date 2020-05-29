@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Table } from 'antd';
 
-import { getSampleData } from '@@actions/sample';
+import { fetchSampleData } from '@@actions/sample';
 import { getEmployees } from '@@selectors/sample';
 
 import css from './styles.module.scss';
@@ -46,7 +46,7 @@ const DarkMatterThieves = () => {
   useEffect(() => {
     // Fetch data.
     // We can retrieve the result via selector. In this example, we use selector
-    dispatch(getSampleData());
+    dispatch(fetchSampleData());
 
     // Or we can retrive the data via callback function
     // dispatch(

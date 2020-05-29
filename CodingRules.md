@@ -127,9 +127,20 @@ const Parent = () => {
 ```
 
 #### 5. [Performance] Use loadable for loading page or big components
-👍👍👍👍👍
 ```javascript
+👍👍👍👍👍
 const Dashboard = loadable(() => pMinDelay(import('@@pages/dashboard'), DELAY));
 ```
 
+#### 5. [Performance] Use Redux batch to avoid Dispatching Many Actions Sequentially
+```
+👍👍👍👍👍
+import { batch } from 'react-redux'
+useEffect(() => {
+    batch(() => {
+        dispatch(increment())
+        dispatch(increment())
+    });
+}, []);
+```
 

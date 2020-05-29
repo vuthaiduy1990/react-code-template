@@ -1,7 +1,7 @@
 // Get sample data
-export const GET_SAMPLE_DATA = 'GET_SAMPLE_DATA';
-export const getSampleData = callback => ({
-  type: GET_SAMPLE_DATA,
+export const FETCH_SAMPLE_DATA = 'FETCH_SAMPLE_DATA';
+export const fetchSampleData = callback => ({
+  type: FETCH_SAMPLE_DATA,
   callback,
 });
 export const ON_SAMPLE_DATA_LOADED = 'ON_SAMPLE_DATA_LOADED';

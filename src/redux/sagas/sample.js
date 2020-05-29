@@ -1,6 +1,6 @@
 import { takeLatest, takeEvery, delay, put, select, call } from 'redux-saga/effects';
 
-import { GET_SAMPLE_DATA, INSERT_SAMPLE_DATA, onSampleDataLoaded, onSampleDataInserted } from '@@actions/sample';
+import { FETCH_SAMPLE_DATA, INSERT_SAMPLE_DATA, onSampleDataLoaded, onSampleDataInserted } from '@@actions/sample';
 import { setLoadingVisible } from '@@actions/common';
 import { getEmployees } from '../apis/sample';
 
@@ -54,11 +54,11 @@ function* insertSampleData({ type, payload, callback }) {
   try {
     // DO insert API call here. Something look like
     // const insertedData = yield call(....)
-    const insertData = type.length > 0 ? payload : {};
+    const insertedData = type.length > 0 ? payload : {};
 
     // Dispath data loaded action
     // This action will map with respective reducer defined in reducers/sample.js
-    yield put(onSampleDataInserted(insertData));
+    yield put(onSampleDataInserted(insertedData));
 
     // Handle callback function
     if (callback) callback(null, null);
@@ -81,6 +81,6 @@ function* insertSampleData({ type, payload, callback }) {
  * @see https://redux-saga.js.org/docs/advanced/Concurrency.html
  */
 export default function* service() {
-  yield takeLatest(GET_SAMPLE_DATA, getSampleData); // always get latest data
+  yield takeLatest(FETCH_SAMPLE_DATA, getSampleData); // always get latest data
   yield takeEvery(INSERT_SAMPLE_DATA, insertSampleData);
 }
