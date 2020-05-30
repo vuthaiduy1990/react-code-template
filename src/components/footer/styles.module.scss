@@ -9,18 +9,19 @@ $space: 8px;
   font-size: 13px;
 }
 
-.copyright, .info {
+.copyright,
+.info {
   margin-left: $space;
   margin-right: $space;
 }
 
 .info {
-  span[_css_="divider"] {
-      margin-left: $space;
-      margin-right: $space;
+  span[_css_='divider'] {
+    margin-left: $space;
+    margin-right: $space;
   }
 
-  i[_css_="bug"] {
+  i[_css_='bug'] {
     color: black;
     cursor: pointer;
     margin-left: $space;
