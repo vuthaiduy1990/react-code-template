@@ -5,6 +5,7 @@ import { useNavigate } from '@reach/router';
 import { Routes } from 'routes';
 import dataset from '@@datas/dashboard';
 import GridView from '@@components/grid-view';
+import Chatting from '@@components/chatting';
 import GalleryDialog from '@@dialogs/gallery';
 
 import css from './styles.module.scss';
@@ -56,6 +57,7 @@ const Dashboard = () => {
           height="calc(100vh * 0.6)"
         />
       ) : null}
+      <Chatting iconCss={css['chatting-icon']} iconSize="3x" placement="leftBottom" />
     </>
   );
 };

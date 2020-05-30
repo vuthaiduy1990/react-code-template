@@ -1,5 +1,12 @@
 .dasboard {
-    padding: 24px 24px;
-    height: 100%;
-    width: 100%;
+  padding: 24px 24px;
+  height: 100%;
+  width: 100%;
+}
+
+.chatting-icon {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  cursor: pointer;
 }
