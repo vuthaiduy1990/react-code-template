@@ -10,7 +10,7 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "format": "prettier --write \"**/*.{js,jsx,json}\"",
+    "format": "prettier --write \"**/*.{js,jsx,json,css,scss}\"",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "test": "jest --config ./jest/jest-config.js",
