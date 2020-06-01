@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGhost } from '@fortawesome/free-solid-svg-icons';
 
 import WebSocketWrapper from '@@components/websocket';
+import { useInterval } from '@@hooks';
 
 import css from './styles.module.scss';
 
@@ -33,6 +34,11 @@ const Chatting = ({ iconCss, iconSize = '2x', placement }) => {
   const inputRef = useRef();
   const textRef = useRef();
   const [visible, setVisible] = useState(false);
+
+  // Auto open chatting form dialog after interval of time
+  useInterval(() => {
+    if (!visible) setVisible(true);
+  }, 5000);
 
   /**
    * Listener for socket error

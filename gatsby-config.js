@@ -64,6 +64,7 @@ module.exports = {
           '@@components': path.resolve(__dirname, 'src/components'),
           '@@dialogs': path.resolve(__dirname, 'src/dialogs'),
           '@@utils': path.resolve(__dirname, 'src/utils'),
+          '@@hooks': path.resolve(__dirname, 'src/hooks'),
           '@@const': path.resolve(__dirname, 'src/const'),
           '@@datas': path.resolve(__dirname, 'src/datas'),
           '@@actions': path.resolve(__dirname, 'src/redux/actions'),
