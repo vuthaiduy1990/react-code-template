@@ -1,10 +1,12 @@
-import React, { memo, useState, useCallback, useEffect, useRef } from 'react';
+import React, { memo, useState, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import cls from 'classnames';
 
 import { Popover, Input } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGhost } from '@fortawesome/free-solid-svg-icons';
+
+import WebSocketWrapper from '@@components/websocket';
 
 import css from './styles.module.scss';
 
@@ -23,58 +25,21 @@ ChatForm.propTypes = {
   onSending: PropTypes.func.isRequired,
 };
 
+/**
+ * Chatting compoment
+ */
 const Chatting = ({ iconCss, iconSize = '2x', placement }) => {
+  const socketRef = useRef();
   const inputRef = useRef();
   const textRef = useRef();
-  const socketRef = useRef(); // use ref to keep reference to socket instance.
   const [visible, setVisible] = useState(false);
-
-  // on component did mount
-  useEffect(() => {
-    initWebSocket();
-
-    // on component will un-mount
-    return () => {
-      disconnectSocket();
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  /**
-   * Init web socket
-   */
-  const initWebSocket = useCallback(() => {
-    const ws = new WebSocket(process.env.GATSBY_DUMMY_WS_URL);
-    socketRef.current = ws;
-    ws.onopen = () => {
-      // Listen for messages
-      socketRef.current.onmessage = onMessageReceiving;
-
-      // listen the error
-      socketRef.current.onerror = onSocketError;
-
-      // Listen for socket closes
-      socketRef.current.onclose = onSocketClose;
-    };
-  }, [onMessageReceiving, onSocketClose, onSocketError]);
-
-  /**
-   * Disconnect socket normally
-   */
-  const disconnectSocket = useCallback(() => {
-    // close normally
-    // https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent
-    if (socketRef.current) {
-      socketRef.current.close(1000);
-    }
-  }, []);
 
   /**
    * Listener for socket error
    */
-  const onSocketError = useCallback(
+  const onSocketOpen = useCallback(
     event => {
-      writeMessage(`Error ... ${event.code}`);
+      writeMessage(event);
     },
     [writeMessage]
   );
@@ -91,11 +56,21 @@ const Chatting = ({ iconCss, iconSize = '2x', placement }) => {
         // The onerror event is fired when something wrong occurs between the communications.
         // The event onerror is followed by a connection termination, which is a close event.
         // Try to reconnect.
+        // But note that, useWebSocket alreadt handle reconnect action
         writeMessage('Reconnect ...');
-        initWebSocket();
       }
     },
-    [initWebSocket, writeMessage]
+    [writeMessage]
+  );
+
+  /**
+   * Listener for socket error
+   */
+  const onSocketError = useCallback(
+    event => {
+      writeMessage(`Error ... ${event.code}`);
+    },
+    [writeMessage]
   );
 
   /**
@@ -109,29 +84,37 @@ const Chatting = ({ iconCss, iconSize = '2x', placement }) => {
         // user press enter
         // send value here to server
         inputRef.current.setValue(''); // empty input
+
+        // socket already closed
+        if (socketRef.current.instance().readyState === WebSocket.CLOSED) {
+          writeMessage('Socket already closed');
+          return;
+        }
+
         writeMessage(`Sending: ${message}`);
-        socketRef.current.send(message);
 
         // send disconect or error for demoing purpose
         if (message === 'disconnect') {
-          disconnectSocket();
+          socketRef.current.disconnectSocket();
         } else if (message === 'error') {
-          socketRef.current.close();
-          socketRef.current.send('trigger errror');
+          // Not norma disconnect -> The socket will auto reconnect
+          socketRef.current.instance().close(4000);
+        } else {
+          socketRef.current.send(message);
         }
       }
     },
-    [disconnectSocket, writeMessage]
+    [socketRef, writeMessage]
   );
 
   /**
    * Listen for messages
    */
-  const onMessageReceiving = useCallback(
+  const onSocketMessage = useCallback(
     event => {
-      writeMessage(`Receiving: ${event.data} - ${event.timeStamp}`);
+      writeMessage(`Receiving: ${event.data} - ${event.timeStamp} - ${visible}`);
     },
-    [writeMessage]
+    [visible, writeMessage]
   );
 
   /**
@@ -162,6 +145,14 @@ const Chatting = ({ iconCss, iconSize = '2x', placement }) => {
       >
         <FontAwesomeIcon icon={faGhost} size={iconSize} className={cls(iconCss)} onClick={toggleChatForm} />
       </Popover>
+      <WebSocketWrapper
+        ref={socketRef}
+        url={process.env.GATSBY_DUMMY_WS_URL}
+        onOpen={onSocketOpen}
+        onMessage={onSocketMessage}
+        onError={onSocketError}
+        onClose={onSocketClose}
+      />
     </>
   );
 };
