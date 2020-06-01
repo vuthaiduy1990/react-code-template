@@ -44,6 +44,8 @@
 * Rest API call using axis library. [0e890a0](https://github.com/vuthaiduy1990/react-code-template/commit/0e890a0eaf23e9c5b5762b08683be1bc61976e9c), [335fbab](https://github.com/vuthaiduy1990/react-code-template/commit/335fbab040bf448a6bdf9dee0b5b91697d060c64)
 * Use environment variable. [335fbab](https://github.com/vuthaiduy1990/react-code-template/commit/335fbab040bf448a6bdf9dee0b5b91697d060c64)
 * Setup Redux dev-tool extension. [ee2ba4f9](https://github.com/vuthaiduy1990/react-code-template/commit/ee2ba4f9404c42e614b2df22d0391b9f93350be8)
+* Use WebSocket [da870bb](https://github.com/vuthaiduy1990/react-code-template/commit/da870bbd7db394f7955779e800277a41b6e88ff7), [6375ab4](https://github.com/vuthaiduy1990/react-code-template/commit/6375ab4c23b0344d7681353c669edee993d325f0)
+* Create custom hook, for example useInterval hook [198d945](https://github.com/vuthaiduy1990/react-code-template/commit/198d94536c1bd784407e85e0854daecc2731a12d)
 
 ## 🔗 Dependencies
 

@@ -132,7 +132,7 @@ const Parent = () => {
 const Dashboard = loadable(() => pMinDelay(import('@@pages/dashboard'), DELAY));
 ```
 
-#### 5. [Performance] Use Redux batch to avoid Dispatching Many Actions Sequentially
+#### 6. [Performance] Use Redux batch to avoid Dispatching Many Actions Sequentially
 ```
 👍👍👍👍👍
 import { batch } from 'react-redux'
@@ -144,3 +144,19 @@ useEffect(() => {
 }, []);
 ```
 
+#### 7. [Performance]  Avoid re-creating the ignored initial state, we can pass a function to useState
+```javascript
+❌❌❌❌❌
+function Table(props) {
+  // createRows() is called on every render
+  const [rows, setRows] = useState(createRows(props.count));
+  // ...
+}
+
+👍👍👍👍👍
+function Table(props) {
+  // createRows() is only called once
+  const [rows, setRows] = useState(() => createRows(props.count));
+  // ...
+}
+```
