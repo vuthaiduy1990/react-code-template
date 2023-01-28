@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
-import css from './styles.module.scss';
+import * as css from './styles.module.scss';
 
-const Loading = ({ visible }) => {
+function Loading({ visible }) {
   return (
     <>
       {visible ? (
@@ -13,7 +13,7 @@ const Loading = ({ visible }) => {
       ) : null}
     </>
   );
-};
+}
 
 Loading.propTypes = {
   visible: PropTypes.bool,

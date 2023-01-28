@@ -2,13 +2,14 @@ import React, { memo } from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { useLocation } from '@reach/router';
 import PropTypes from 'prop-types';
-import { Breadcrumb, PageHeader } from 'antd';
+import { Breadcrumb } from 'antd';
+import { PageHeader } from '@ant-design/pro-layout';
 
 import { createBreadcrumb } from '@@utils/url';
 
-import css from './styles.module.scss';
+import * as css from './styles.module.scss';
 
-const Header = ({ routes }) => {
+function Header({ routes }) {
   const { siteMetadata } = useStaticQuery(
     graphql`
       query {
@@ -26,7 +27,7 @@ const Header = ({ routes }) => {
 
   return (
     <>
-      <div className={css.header}>
+      <div>
         {breadcrumbs.length > 1 ? (
           <Breadcrumb className={css.breadcrumbs}>
             {breadcrumbs.map((item, idx) => (
@@ -43,7 +44,7 @@ const Header = ({ routes }) => {
       </a>
     </>
   );
-};
+}
 
 Header.propTypes = {
   routes: PropTypes.shape({

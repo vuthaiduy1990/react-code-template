@@ -4,7 +4,7 @@
  * @see stores for applying enhancers
  */
 
-export const MonitorReducer = createStore => (reducer, initialState, enhancer) => {
+export const MonitorReducer = (createStore) => (reducer, initialState, enhancer) => {
   const monitoredReducerWorker = (state, action) => {
     const start = new Date().getTime();
     const newState = reducer(state, action);

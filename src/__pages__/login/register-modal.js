@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState, forwardRef, useImperativeHandle, memo, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { Modal, Input, Button } from 'antd';
 
 // inline css for register button using emotion
@@ -40,6 +40,14 @@ const RegisterModal = forwardRef(({ onSubmit, onClose }, ref) => {
   }, []);
 
   /**
+   * Reset form
+   */
+  const resetFormData = useCallback(() => {
+    setFormData({});
+    setOriginData(null);
+  }, []);
+
+  /**
    * Trigger when modal is closed
    */
   const onModalClosed = useCallback(() => {
@@ -58,18 +66,10 @@ const RegisterModal = forwardRef(({ onSubmit, onClose }, ref) => {
   }, [onSubmit, originData, formData, toggleClose]);
 
   /**
-   * Reset form
-   */
-  const resetFormData = useCallback(() => {
-    setFormData({});
-    setOriginData(null);
-  }, []);
-
-  /**
    * On username input changed
    */
   const onUsernameChange = useCallback(
-    e => {
+    (e) => {
       setFormData({
         ...formData,
         username: e.target.value,
@@ -79,28 +79,26 @@ const RegisterModal = forwardRef(({ onSubmit, onClose }, ref) => {
   );
 
   return (
-    <>
-      <Modal
-        title="Register Account"
-        centered
-        maskClosable={false}
-        visible={visible}
-        onCancel={toggleClose}
-        afterClose={onModalClosed}
-        footer={[
-          <Button key="close" onClick={toggleClose}>
-            Close
-          </Button>,
-          <Button key="Register" onClick={onRegisterHandler} css={registerBtnCss}>
-            Register
-          </Button>,
-        ]}
-      >
-        <div>
-          <Input placeholder="input username" value={formData.username} onChange={onUsernameChange} />
-        </div>
-      </Modal>
-    </>
+    <Modal
+      title="Register Account"
+      centered
+      maskClosable={false}
+      open={visible}
+      onCancel={toggleClose}
+      afterClose={onModalClosed}
+      footer={[
+        <Button key="close" onClick={toggleClose}>
+          Close
+        </Button>,
+        <Button key="Register" onClick={onRegisterHandler} css={registerBtnCss}>
+          Register
+        </Button>,
+      ]}
+    >
+      <div>
+        <Input placeholder="input username" value={formData.username} onChange={onUsernameChange} />
+      </div>
+    </Modal>
   );
 });
 

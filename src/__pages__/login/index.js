@@ -1,18 +1,17 @@
 import React, { useCallback, useRef, useContext } from 'react';
 import GlobalContext from 'global';
-import { useNavigate, useLocation } from '@reach/router';
+import { navigate, useLocation } from '@reach/router';
 import { Form, Input, Button, Row, Col, Space, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 
-import css from './styles.module.scss';
+import * as css from './styles.module.scss';
 import RegisterModal from './register-modal';
 
-const Login = () => {
+function Login() {
   const { t } = useTranslation();
-  const navigate = useNavigate();
   const location = useLocation();
   const routeState = location.state || {};
-  const global = useContext(GlobalContext);
+  const { loadingRef } = useContext(GlobalContext);
 
   // reference to register modal dialog
   const registerModalRef = useRef();
@@ -21,20 +20,20 @@ const Login = () => {
    * Trigger when click login button
    */
   const onSubmit = useCallback(
-    formData => {
+    (formData) => {
       message.info(`${formData.username} - ${formData.password}`, 3);
 
       // redirecto to dashboard page
       window.sessionStorage.setItem('account', JSON.stringify(formData));
       navigate(routeState.redirectTo || '/', { replace: true });
     },
-    [navigate, routeState.redirectTo]
+    [routeState.redirectTo]
   );
 
   /**
    * Trigger when error occurs
    */
-  const onLoginFailed = useCallback(err => {
+  const onLoginFailed = useCallback((err) => {
     message.error(err.toString(), 3);
   }, []);
 
@@ -51,17 +50,17 @@ const Login = () => {
   const onRegisterModalSubmit = useCallback(
     (originData, formData) => {
       // show loading progress
-      global.loadingRef.current.show();
+      loadingRef.current.show();
 
       // Handle some workload here
       setTimeout(() => {
         message.info(`register modal submitted - ${formData.username}`, 3);
 
         // close loading progress
-        global.loadingRef.current.hide();
+        loadingRef.current.hide();
       }, 1000);
     },
-    [global.loadingRef]
+    [loadingRef]
   );
 
   /**
@@ -100,7 +99,7 @@ const Login = () => {
             </Form.Item>
 
             <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-              <Space className={css['login-footer']}>
+              <Space className={css.loginFooter}>
                 <Button type="link" onClick={onRegisterBtnClick}>
                   {t('register.new')}
                 </Button>
@@ -115,6 +114,6 @@ const Login = () => {
       <RegisterModal ref={registerModalRef} onSubmit={onRegisterModalSubmit} onClose={onRegisterModalClose} />
     </>
   );
-};
+}
 
 export default Login;

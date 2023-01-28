@@ -9,17 +9,17 @@ import { faGhost } from '@fortawesome/free-solid-svg-icons';
 import WebSocketWrapper from '@@components/websocket';
 import { useInterval } from '@@hooks';
 
-import css from './styles.module.scss';
+import * as css from './styles.module.scss';
 
 const hint = 'Type "disconnect" to test closing socket.\nType "error" to test socket error and reconnect';
-const ChatForm = ({ inputRef, textRef, onSending }) => {
+function ChatForm({ inputRef, textRef, onSending }) {
   return (
     <>
       <Input ref={inputRef} placeholder="Type something here" onKeyDown={onSending} className={css.sender} />
       <textarea ref={textRef} placeholder={hint} rows="4" readOnly className={css.receiver} />
     </>
   );
-};
+}
 ChatForm.propTypes = {
   inputRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func]).isRequired,
   textRef: PropTypes.oneOfType([PropTypes.object, PropTypes.func]).isRequired,
@@ -29,11 +29,22 @@ ChatForm.propTypes = {
 /**
  * Chatting compoment
  */
-const Chatting = ({ iconCss, iconSize = '2x', placement }) => {
+function Chatting({ iconCss, iconSize = '2x', placement }) {
   const socketRef = useRef();
   const inputRef = useRef();
   const textRef = useRef();
   const [visible, setVisible] = useState(false);
+
+  /**
+   * Write message
+   */
+  const writeMessage = useCallback((message) => {
+    const textEl = textRef.current;
+    if (textEl) {
+      textEl.append(`${message}\n`);
+      textEl.scrollTop = textEl.scrollHeight;
+    }
+  }, []);
 
   // Auto open chatting form dialog after interval of time
   useInterval(() => {
@@ -44,7 +55,7 @@ const Chatting = ({ iconCss, iconSize = '2x', placement }) => {
    * Listener for socket error
    */
   const onSocketOpen = useCallback(
-    event => {
+    (event) => {
       writeMessage(event);
     },
     [writeMessage]
@@ -54,7 +65,7 @@ const Chatting = ({ iconCss, iconSize = '2x', placement }) => {
    * Listen for socket close
    */
   const onSocketClose = useCallback(
-    event => {
+    (event) => {
       if (event.code === 1000) {
         // Error code 1000 means that the connection was closed normally.
         writeMessage('Closed ...');
@@ -73,7 +84,7 @@ const Chatting = ({ iconCss, iconSize = '2x', placement }) => {
    * Listener for socket error
    */
   const onSocketError = useCallback(
-    event => {
+    (event) => {
       writeMessage(`Error ... ${event.code}`);
     },
     [writeMessage]
@@ -83,7 +94,7 @@ const Chatting = ({ iconCss, iconSize = '2x', placement }) => {
    * Trigger when user
    */
   const onSending = useCallback(
-    e => {
+    (e) => {
       const message = e.target.value;
       const keyCode = e.which || e.keyCode;
       if (keyCode === 13) {
@@ -117,22 +128,11 @@ const Chatting = ({ iconCss, iconSize = '2x', placement }) => {
    * Listen for messages
    */
   const onSocketMessage = useCallback(
-    event => {
+    (event) => {
       writeMessage(`Receiving: ${event.data} - ${event.timeStamp} - ${visible}`);
     },
     [visible, writeMessage]
   );
-
-  /**
-   * Write message
-   */
-  const writeMessage = useCallback(message => {
-    const textEl = textRef.current;
-    if (textEl) {
-      textEl.append(`${message}\n`);
-      textEl.scrollTop = textEl.scrollHeight;
-    }
-  }, []);
 
   /**
    * Trigger when user click on ghost icon to show chat form
@@ -161,7 +161,7 @@ const Chatting = ({ iconCss, iconSize = '2x', placement }) => {
       />
     </>
   );
-};
+}
 
 Chatting.propTypes = {
   iconCss: PropTypes.string,

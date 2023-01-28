@@ -16,12 +16,12 @@ $space: 8px;
 }
 
 .info {
-  span[_css_='divider'] {
+  span[attr='divider'] {
     margin-left: $space;
     margin-right: $space;
   }
 
-  i[_css_='bug'] {
+  i[attr='bug'] {
     color: black;
     cursor: pointer;
     margin-left: $space;

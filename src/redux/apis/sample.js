@@ -13,7 +13,7 @@ export const getEmployees = () => {
     // this url has been configure as default.
     // @ee gastby-browser.js
     // baseURL: 'http://dummy.restapiexample.com/',
-  }).then(res => {
+  }).then((res) => {
     if (res.status === HttpStatus.OK) {
       return res.data.data;
     }

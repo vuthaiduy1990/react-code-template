@@ -34,6 +34,6 @@ const handlers = {
 };
 
 // Execute handler respective to action
-export default (state = initialState, action) => {
+export default (state = initialState, action = {}) => {
   return handlers[action.type] ? handlers[action.type](state, action) : state;
 };

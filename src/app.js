@@ -19,12 +19,12 @@ const MonsterAssociation = loadable(() => pMinDelay(import('@@pages/monster-asso
 const DarkMatterThieves = loadable(() => pMinDelay(import('@@pages/dark-matter-thieves'), DELAY));
 const NotFound = loadable(() => pMinDelay(import('@@pages/not-found'), DELAY));
 
-const App = () => {
+function App() {
   const location = useLocation();
   const isLogged = typeof window !== 'undefined' && window.sessionStorage.getItem('account') !== null;
 
   // select loading's visibility
-  const loadingVisible = useSelector(state => state.common.loading);
+  const loadingVisible = useSelector((state) => state.common.loading);
 
   if (isLogged) {
     // redirect to dashboard if user already logged in
@@ -51,5 +51,5 @@ const App = () => {
       <Loading visible={loadingVisible} />
     </>
   );
-};
+}
 export default App;

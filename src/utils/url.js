@@ -4,8 +4,8 @@
  * @param {String} url For example: "dashboard/hero-association/tatsumaki"
  * @returns {Array} array of segements ['dashboard', 'hero-association', 'tatsumaki']
  */
-export const splitUrlPaths = url => {
-  return url.split('/').filter(seg => {
+export const splitUrlPaths = (url) => {
+  return url.split('/').filter((seg) => {
     return seg.trim().length !== 0;
   });
 };
@@ -32,11 +32,11 @@ const getBreadcrumbLink = (urlSegements, route) => {
 export const createBreadcrumb = (location, routes) => {
   const urlSegements = splitUrlPaths(location.pathname);
   const breadCrumbs = urlSegements
-    .map(seg => {
+    .map((seg) => {
       const route = routes[seg];
       return route != null ? { route, link: getBreadcrumbLink(urlSegements, route) } : null;
     })
-    .filter(item => {
+    .filter((item) => {
       return item != null;
     });
   return breadCrumbs;

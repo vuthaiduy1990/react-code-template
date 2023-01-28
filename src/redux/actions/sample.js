@@ -1,11 +1,11 @@
 // Get sample data
 export const FETCH_SAMPLE_DATA = 'FETCH_SAMPLE_DATA';
-export const fetchSampleData = callback => ({
+export const fetchSampleData = (callback) => ({
   type: FETCH_SAMPLE_DATA,
   callback,
 });
 export const ON_SAMPLE_DATA_LOADED = 'ON_SAMPLE_DATA_LOADED';
-export const onSampleDataLoaded = result => ({
+export const onSampleDataLoaded = (result) => ({
   type: ON_SAMPLE_DATA_LOADED,
   result,
 });
@@ -18,7 +18,7 @@ export const insertSampleData = (payload, callback) => ({
   callback,
 });
 export const ON_SAMPLE_DATA_INSERTED = 'ON_SAMPLE_DATA_INSERTED';
-export const onSampleDataInserted = result => ({
+export const onSampleDataInserted = (result) => ({
   type: ON_SAMPLE_DATA_INSERTED,
   result,
 });

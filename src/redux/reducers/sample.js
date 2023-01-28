@@ -27,7 +27,7 @@ const onSampleDataLoaded = (state, { result }) => {
   // https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns
   return {
     ...state,
-    employees: result.map(item => ({ ...item, key: `${item.id}`, source: 'dummy.restapiexample.com' })),
+    employees: result.map((item) => ({ ...item, key: `${item.id}`, source: 'dummy.restapiexample.com' })),
   };
 };
 
@@ -51,6 +51,8 @@ const handlers = {
 };
 
 // Execute handler respective to action
-export default (state = initialState, action) => {
+const Sample = (state = initialState, action = {}) => {
   return handlers[action.type] ? handlers[action.type](state, action) : state;
 };
+
+export default Sample;

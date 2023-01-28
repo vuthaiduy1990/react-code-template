@@ -8,7 +8,7 @@
  * Logger middleware.
  * Add extra logging before/after to each dispatching
  */
-export const Logger = store => next => action => {
+export const Logger = (store) => (next) => (action) => {
   console.log(`🌼 [${action.type}] before dispatching`);
   const result = next(action);
   console.log(`🌼 [${action.type}] after dispatching: `, store.getState());
@@ -19,7 +19,7 @@ export const Logger = store => next => action => {
  * Crash Reporter middleware.
  * Add extra handler if exeception occurs
  */
-export const CrashReporter = store => next => action => {
+export const CrashReporter = (store) => (next) => (action) => {
   try {
     return next(action);
   } catch (err) {

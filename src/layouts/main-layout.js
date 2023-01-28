@@ -6,21 +6,19 @@ import { Routes } from 'routes';
 import Footer from '@@components/footer';
 import Header from '@@components/header';
 
-import css from './main-layout.module.scss';
+import * as css from './main-layout.module.scss';
 
-const MainLayout = ({ children }) => {
+function MainLayout({ children }) {
   return (
-    <>
-      <div className={css['main-layout']}>
-        <Header routes={Routes} />
-        <PerfectScrollbar>
-          <div className={css.body}>{children}</div>
-        </PerfectScrollbar>
-        <Footer />
-      </div>
-    </>
+    <div className={css.mainLayout}>
+      <Header routes={Routes} />
+      <PerfectScrollbar>
+        <div className={css.body}>{children}</div>
+      </PerfectScrollbar>
+      <Footer />
+    </div>
   );
-};
+}
 
 MainLayout.propTypes = {
   children: PropTypes.node.isRequired,

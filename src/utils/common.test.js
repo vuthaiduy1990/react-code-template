@@ -11,14 +11,14 @@ describe(`UT-${a}. Common Utilities`, () => {
     let c = 1;
 
     // call noop with no parameter
-    it(`UT-${a}.${b}.${c}. test noop function with no parameter`, done => {
+    it(`UT-${a}.${b}.${c}. test noop function with no parameter`, (done) => {
       assert.equal('', noop());
       done();
     });
 
     // call noop with parameter
     c += 1;
-    it(`UT-${a}.${b}.${c}. test noop function with parameter`, done => {
+    it(`UT-${a}.${b}.${c}. test noop function with parameter`, (done) => {
       assert.equal('', noop('xxx'));
       done();
     });

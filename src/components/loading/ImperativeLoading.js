@@ -18,10 +18,6 @@ const ImperativeLoading = forwardRef((_, ref) => {
     },
   }));
 
-  return (
-    <>
-      <Loading visible={visible} />
-    </>
-  );
+  return <Loading visible={visible} />;
 });
 export default memo(ImperativeLoading);

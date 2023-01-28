@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { Row, Col, Typography } from 'antd';
 import LazyLoad from 'react-lazyload';
 
-import css from './styles.module.scss';
+import * as css from './styles.module.scss';
 
 const { Title } = Typography;
-const GridView = ({ dataset, col, onItemClick }) => {
+function GridView({ dataset, col, onItemClick }) {
   const GRID_COLS = [...Array(col).keys()];
   const GRID_ROWS = [...Array(Math.ceil(dataset.length / GRID_COLS.length)).keys()];
 
@@ -14,36 +14,34 @@ const GridView = ({ dataset, col, onItemClick }) => {
    * Trigger when user click on thumbnail or title
    */
   const onClick = useCallback(
-    data => () => {
+    (data) => () => {
       if (onItemClick) onItemClick(data);
     },
     [onItemClick]
   );
 
   return (
-    <>
-      <LazyLoad>
-        {GRID_ROWS.map((row, rIdx) => (
-          <Row gutter={[48, 16]} key={row}>
-            {GRID_COLS.map((_, cIdx) => {
-              const data = dataset[rIdx * GRID_COLS.length + cIdx];
-              return data ? (
-                <Col span={24 / col} key={data.title} className={css.cell}>
-                  <LazyLoad>
-                    <img src={data.thumbnail} alt="" style={{ width: '100%' }} onClick={onClick(data)} />
-                  </LazyLoad>
-                  <Title level={4} className={css.title}>
-                    {data.title}
-                  </Title>
-                </Col>
-              ) : null;
-            })}
-          </Row>
-        ))}
-      </LazyLoad>
-    </>
+    <div>
+      {GRID_ROWS.map((row, rIdx) => (
+        <Row gutter={[48, 16]} key={row}>
+          {GRID_COLS.map((_, cIdx) => {
+            const data = dataset[rIdx * GRID_COLS.length + cIdx];
+            return data ? (
+              <Col span={24 / col} key={data.title} className={css.cell}>
+                <LazyLoad>
+                  <img src={data.thumbnail} alt="" style={{ width: '100%' }} onClick={onClick(data)} />
+                </LazyLoad>
+                <Title level={4} className={css.title}>
+                  {data.title}
+                </Title>
+              </Col>
+            ) : null;
+          })}
+        </Row>
+      ))}
+    </div>
   );
-};
+}
 
 GridView.propTypes = {
   dataset: PropTypes.arrayOf(

@@ -5,7 +5,7 @@ import { Table } from 'antd';
 import { fetchSampleData } from '@@actions/sample';
 import { getEmployees } from '@@selectors/sample';
 
-import css from './styles.module.scss';
+import * as css from './styles.module.scss';
 
 const columns = [
   {
@@ -35,7 +35,7 @@ const columns = [
   },
 ];
 
-const DarkMatterThieves = () => {
+function DarkMatterThieves() {
   const dispatch = useDispatch();
 
   // select data from state
@@ -61,11 +61,9 @@ const DarkMatterThieves = () => {
   }, []);
 
   return (
-    <>
-      <div className={css.layout}>
-        <Table dataSource={employees} columns={columns} />
-      </div>
-    </>
+    <div className={css.layout}>
+      <Table dataSource={employees} columns={columns} />
+    </div>
   );
-};
+}
 export default DarkMatterThieves;

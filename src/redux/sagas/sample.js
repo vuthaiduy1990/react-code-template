@@ -26,7 +26,7 @@ function* getSampleData(action) {
     yield put(onSampleDataLoaded(result));
 
     // Next, we can retrieve data after pre-processing via state
-    const employees = yield select(state => state.sample.employees);
+    const employees = yield select((state) => state.sample.employees);
 
     // Handle callback function
     if (action.callback) action.callback(null, employees);

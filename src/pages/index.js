@@ -9,7 +9,7 @@ import App from '../app';
 import GlobalContext from '../global';
 import configStore from '../redux/stores';
 
-const Root = () => {
+function Root() {
   // initial state
   const initalState = {
     // @see rootReducer
@@ -21,7 +21,7 @@ const Root = () => {
 
   return (
     <GlobalContext.Consumer>
-      {global => (
+      {(global) => (
         <ConfigProvider locale={enUS}>
           <Provider store={configStore(initalState)}>
             <App />
@@ -31,5 +31,5 @@ const Root = () => {
       )}
     </GlobalContext.Consumer>
   );
-};
+}
 export default Root;

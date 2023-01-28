@@ -8,6 +8,67 @@ const WebSocketWrapper = forwardRef(({ url, onOpen, onMessage, onError, onClose 
   const onErrorRef = useRef();
   const onCloseRef = useRef();
 
+  /**
+   * Listen for socket message
+   */
+  const onSocketMessage = useCallback((event) => {
+    if (onMessageRef.current) onMessageRef.current(event);
+  }, []);
+
+  /**
+   * Listen for socket error
+   */
+  const onSocketError = useCallback((event) => {
+    if (onErrorRef.current) onErrorRef.current(event);
+  }, []);
+
+  /**
+   * Listen for socket close
+   */
+  const onSocketClose = useCallback(
+    (event) => {
+      if (onCloseRef.current) onCloseRef.current(event);
+      if (event.code !== 1000) {
+        // The onerror event is fired when something wrong occurs between the communications.
+        // The event onerror is followed by a connection termination, which is a close event.
+        // Try to reconnect.
+        initWebSocket();
+      }
+    },
+    [initWebSocket]
+  );
+
+  /**
+   * Init web socket
+   */
+  const initWebSocket = useCallback(() => {
+    const ws = new WebSocket(url);
+    socketRef.current = ws;
+    ws.onopen = (event) => {
+      // open event
+      if (onOpenRef.current) onOpenRef.current(event);
+
+      // Listen for messages
+      socketRef.current.onmessage = onSocketMessage;
+
+      // listen the error
+      socketRef.current.onerror = onSocketError;
+
+      // Listen for socket close
+      socketRef.current.onclose = onSocketClose;
+    };
+  }, [url, onSocketMessage, onSocketClose, onSocketError]);
+
+  /**
+   * Close web socket
+   * @see https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent
+   */
+  const closeWebSocket = useCallback((code) => {
+    if (socketRef.current) {
+      socketRef.current.close(code);
+    }
+  }, []);
+
   useImperativeHandle(ref, () => ({
     /**
      * Get WebSocket instances
@@ -82,67 +143,6 @@ const WebSocketWrapper = forwardRef(({ url, onOpen, onMessage, onError, onClose 
   useEffect(() => {
     onCloseRef.current = onClose;
   }, [onClose]);
-
-  /**
-   * Init web socket
-   */
-  const initWebSocket = useCallback(() => {
-    const ws = new WebSocket(url);
-    socketRef.current = ws;
-    ws.onopen = event => {
-      // open event
-      if (onOpenRef.current) onOpenRef.current(event);
-
-      // Listen for messages
-      socketRef.current.onmessage = onSocketMessage;
-
-      // listen the error
-      socketRef.current.onerror = onSocketError;
-
-      // Listen for socket close
-      socketRef.current.onclose = onSocketClose;
-    };
-  }, [url, onSocketMessage, onSocketClose, onSocketError]);
-
-  /**
-   * Close web socket
-   * @see https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent
-   */
-  const closeWebSocket = useCallback(code => {
-    if (socketRef.current) {
-      socketRef.current.close(code);
-    }
-  }, []);
-
-  /**
-   * Listen for socket message
-   */
-  const onSocketMessage = useCallback(event => {
-    if (onMessageRef.current) onMessageRef.current(event);
-  }, []);
-
-  /**
-   * Listen for socket error
-   */
-  const onSocketError = useCallback(event => {
-    if (onErrorRef.current) onErrorRef.current(event);
-  }, []);
-
-  /**
-   * Listen for socket close
-   */
-  const onSocketClose = useCallback(
-    event => {
-      if (onCloseRef.current) onCloseRef.current(event);
-      if (event.code !== 1000) {
-        // The onerror event is fired when something wrong occurs between the communications.
-        // The event onerror is followed by a connection termination, which is a close event.
-        // Try to reconnect.
-        initWebSocket();
-      }
-    },
-    [initWebSocket]
-  );
 
   return <></>;
 });

@@ -4,13 +4,12 @@
 import React, { memo, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Modal, Carousel, Space } from 'antd';
-import LazyLoad from 'react-lazyload';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleLeft, faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 
-import css from './styles.module.scss';
+import * as css from './styles.module.scss';
 
-const GalleryDialog = ({ title, photos, isOpen, toggleClose, height }) => {
+function GalleryDialog({ title, photos, isOpen, toggleClose, height }) {
   const carouselRef = useRef();
 
   /**
@@ -29,7 +28,7 @@ const GalleryDialog = ({ title, photos, isOpen, toggleClose, height }) => {
 
   return (
     <Modal
-      visible={isOpen}
+      open={isOpen}
       title={title}
       centered
       onCancel={toggleClose}
@@ -41,17 +40,15 @@ const GalleryDialog = ({ title, photos, isOpen, toggleClose, height }) => {
       ]}
     >
       <Carousel effect="fade" autoplay ref={carouselRef}>
-        {photos.map(item => (
-          <LazyLoad key={item}>
-            <div className={css.img}>
-              <img src={item} alt="" style={{ maxWidth: '100%', maxHeight: height }} />
-            </div>
-          </LazyLoad>
+        {photos.map((item) => (
+          <div className={css.img}>
+            <img src={item} alt="" style={{ maxWidth: '100%', maxHeight: height }} />
+          </div>
         ))}
       </Carousel>
     </Modal>
   );
-};
+}
 
 GalleryDialog.propTypes = {
   title: PropTypes.string.isRequired,

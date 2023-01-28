@@ -40,12 +40,15 @@
     "object-curly-newline": "off",
     "comma-dangle": "off",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "react/no-unknown-property": "off",
+    "react/jsx-no-useless-fragment": "off"
   },
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "sourceType": "module",
-    "allowImportExportEverywhere": true
+    "allowImportExportEverywhere": true,
+    "requireConfigFile": false
   },
   "globals": {
     "window": true,

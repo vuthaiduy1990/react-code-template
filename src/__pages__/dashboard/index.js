@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { Row, Col } from 'antd';
-import { useNavigate } from '@reach/router';
+import { navigate } from '@reach/router';
 
 import { Routes } from 'routes';
 import dataset from '@@datas/dashboard';
@@ -8,29 +8,25 @@ import GridView from '@@components/grid-view';
 import Chatting from '@@components/chatting';
 import GalleryDialog from '@@dialogs/gallery';
 
-import css from './styles.module.scss';
+import * as css from './styles.module.scss';
 
-const Dashboard = () => {
-  const navigate = useNavigate();
+function Dashboard() {
   const [galleryDialogOpen, setGalleryDialogOpen] = useState(false);
   const [selected, setSelected] = useState();
 
   /**
    * Trigger when user click on an thumbnail
    */
-  const onItemClick = useCallback(
-    data => {
-      if (data.title === 'Fubuki Group') {
-        setSelected(data);
-        setGalleryDialogOpen(true);
-        return;
-      }
+  const onItemClick = useCallback((data) => {
+    if (data.title === 'Fubuki Group') {
+      setSelected(data);
+      setGalleryDialogOpen(true);
+      return;
+    }
 
-      if (!data.route || data.route.trim().length === '') return;
-      navigate(Routes[data.route].path);
-    },
-    [navigate]
-  );
+    if (!data.route || data.route.trim().length === '') return;
+    navigate(Routes[data.route].path);
+  }, []);
 
   /**
    * Toggle gallery dialog
@@ -57,8 +53,8 @@ const Dashboard = () => {
           height="calc(100vh * 0.6)"
         />
       ) : null}
-      <Chatting iconCss={css['chatting-icon']} iconSize="3x" placement="leftBottom" />
+      {/* <Chatting iconCss={css['chatting-icon']} iconSize="3x" placement="leftBottom" /> */}
     </>
   );
-};
+}
 export default Dashboard;

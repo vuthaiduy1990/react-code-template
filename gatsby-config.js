@@ -31,6 +31,9 @@ module.exports = {
       resolve: 'gatsby-plugin-less',
       options: {
         javascriptEnabled: true,
+        cssLoaderOptions: {
+          camelCase: false,
+        },
       },
     },
 
@@ -45,7 +48,7 @@ module.exports = {
       resolve: 'gatsby-plugin-eslint',
       options: {
         test: /\.js$|\.jsx$/,
-        exclude: /(node_modules|.cache|public)/,
+        exclude: /(node_modules|.cache|public|.pnp.cjs|.pnp.loader.mjs)/,
         stages: ['develop'],
         options: {
           emitWarning: true,
