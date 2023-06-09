@@ -31,7 +31,7 @@
     "antd": "^5.1.5",
     "axios": "^1.2.2",
     "classnames": "^2.3.2",
-    "gatsby": "^5.4.2",
+    "gatsby": "^5.9.1",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-emotion": "^8.4.0",
     "gatsby-plugin-import": "^2.1.7",
